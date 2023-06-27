@@ -38,8 +38,8 @@ jobs:
       - name: Check for errors
         run: pnpm affected:lint
 
-      - name: Build packages
-        run: pnpm affected:build
+      - name: Build @spren-ui/components package
+        run: pnpm build:components
 
       - name: Create Version PR or Publish to NPM
         id: changesets

@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@spren-ui/components": ["packages/components/index.ts"],
+      "@spren-ui/components/*": ["packages/components/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

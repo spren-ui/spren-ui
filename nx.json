@@ -55,10 +55,9 @@
       "addTailwind": true
     },
     "@nx/angular:library": {
-      "style": "css",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "prefix": "bmed",
+      "style": "css",
       "changeDetection": "OnPush",
       "standalone": true,
       "inlineStyle": true,

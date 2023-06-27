@@ -1,0 +1,47 @@
+{
+  "name": "@spren-ui/components",
+  "version": "0.0.1",
+  "description": "Angular headless components.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Saul Moro",
+    "url": "https://twitter.com/SaulMoroDev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saulmoro/spren-ui.git",
+    "directory": "packages/components"
+  },
+  "keywords": [
+    "angular",
+    "components",
+    "headless",
+    "spren-ui",
+    "spren",
+    "ui",
+    "zagjs"
+  ],
+  "scripts": {
+    "build": "nx run components:build",
+    "release": "changeset version",
+    "pub:beta": "pnpm build && pnpm publish --no-git-checks --access public --tag beta",
+    "pub:next": "pnpm build && pnpm publish --no-git-checks --access public --tag next",
+    "pub:release": "pnpm build && pnpm publish --access public"
+  },
+  "peerDependencies": {
+    "@angular/common": "^16.1.0",
+    "@angular/core": "^16.1.0"
+  },
+  "dependencies": {
+    "@zag-js/accordion": "~0.10.2",
+    "@zag-js/checkbox": "~0.10.2",
+    "@zag-js/combobox": "~0.10.2",
+    "@zag-js/switch": "~0.10.2",
+    "@zag-js/tabs": "~0.10.2",
+    "tslib": "^2.1.0"
+  },
+  "sideEffects": false
+}
