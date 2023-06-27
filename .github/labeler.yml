@@ -1,0 +1,17 @@
+'📌 area: components':
+  - any: ['packages/components/**/*']
+
+'📌 area: shadcn':
+  - any: ['packages/shadcn/**/*']
+
+'📌 area: utils':
+  - any: ['packages/utils/**/*']
+
+'📌 area: zag':
+  - any: ['packages/zag/**/*']
+
+'📚 documentation':
+  - any: ['**/*.md']
+
+'📌 area: ci':
+  - any: ['.github/**/*']
