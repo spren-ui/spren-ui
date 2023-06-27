@@ -1,0 +1,91 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "libsDir": "packages"
+  },
+  "cli": {
+    "packageManager": "pnpm",
+    "defaultCollection": "@nx/angular"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "N2JjMDA3Y2QtZjFjNi00YzFiLTgxZDEtNmRmODM3NjEzYTFlfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "test": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    },
+    "e2e": {
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/.eslintignore"]
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json"
+    ],
+    "sharedGlobals": []
+  },
+  "generators": {
+    "@nx/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress",
+      "standalone": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "routing": true,
+      "addTailwind": true
+    },
+    "@nx/angular:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "prefix": "bmed",
+      "changeDetection": "OnPush",
+      "standalone": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "viewEncapsulation": "None"
+    },
+    "@nx/angular:component": {
+      "style": "css",
+      "changeDetection": "OnPush",
+      "standalone": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "viewEncapsulation": "None"
+    },
+    "@schematics/angular:component": {
+      "style": "css",
+      "changeDetection": "OnPush",
+      "standalone": true,
+      "inlineStyle": true,
+      "inlineTemplate": true,
+      "viewEncapsulation": "None"
+    },
+    "@schematics/angular:directive": {
+      "standalone": true
+    },
+    "@schematics/angular:pipe": {
+      "standalone": true
+    }
+  }
+}

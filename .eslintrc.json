@@ -1,0 +1,75 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cva", "cn"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript", "plugin:tailwindcss/recommended"],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": ["memberLike"],
+            "modifiers": ["private"],
+            "prefix": ["#"],
+            "format": null
+          }
+        ],
+        "tailwindcss/no-custom-classname": "off",
+        "tailwindcss/classnames-order": "error"
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.html"],
+      "extends": ["plugin:tailwindcss/recommended"],
+      "rules": {
+        "tailwindcss/no-custom-classname": "off"
+      }
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "extends": [
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/angular"
+      ],
+      "rules": {
+        "jest/consistent-test-it": ["error"],
+        "testing-library/prefer-explicit-assert": "error"
+      }
+    }
+  ]
+}
