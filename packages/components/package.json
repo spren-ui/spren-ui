@@ -1,7 +1,7 @@
 {
   "name": "@spren-ui/components",
   "version": "0.0.1",
-  "description": "Angular headless components.",
+  "description": "Angular headless components",
   "publishConfig": {
     "access": "public"
   },
@@ -15,6 +15,10 @@
     "url": "https://github.com/saulmoro/spren-ui.git",
     "directory": "packages/components"
   },
+  "bugs": {
+    "url": "https://github.com/saulmoro/spren-ui/issues"
+  },
+  "homepage": "https://github.com/saulmoro/spren-ui",
   "keywords": [
     "angular",
     "components",

@@ -31,6 +31,9 @@
     "type": "git",
     "url": "https://github.com/saulmoro/spren-ui.git"
   },
+  "bugs": {
+    "url": "https://github.com/saulmoro/spren-ui/issues"
+  },
   "homepage": "https://github.com/saulmoro/spren-ui",
   "keywords": [
     "angular",
@@ -40,9 +43,6 @@
     "spren",
     "ui"
   ],
-  "bugs": {
-    "url": "https://github.com/saulmoro/spren-ui/issues"
-  },
   "workspaces": [
     "apps/*",
     "packages/*"
