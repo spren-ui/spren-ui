@@ -24,9 +24,10 @@ What kind of change does this PR introduce?
 ## Which package are you modifying?
 
 - [ ] components
-- [ ] utils
 - [ ] shadcn
-- [ ] zag
+- [ ] web
+- [ ] utils
+- [ ] zag-angular
 
 ## What is the current behavior?
 
@@ -44,5 +45,3 @@ Closes #
 <!-- If this PR contains a breaking change, please describe the impact and migration path for existing applications below. -->
 
 ## Other information
-
-## [optional] What [gif](https://chrome.google.com/webstore/detail/gifs-for-github/dkgjnpbipbdaoaadbdhpiokaemhlphep) best describes this PR or how it makes you feel?

@@ -26,9 +26,10 @@ body:
       label: Which area/package is the issue in?
       options:
         - components
-        - utils
         - shadcn
-        - zag
+        - web
+        - utils
+        - zag-angular
     validations:
       required: true
 

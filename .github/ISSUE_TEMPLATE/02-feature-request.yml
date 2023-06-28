@@ -17,9 +17,10 @@ body:
       label: Which scope/s are relevant/related to the feature request?
       options:
         - components
-        - utils
         - shadcn
-        - zag
+        - web
+        - utils
+        - zag-angular
     validations:
       required: true
 

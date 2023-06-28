@@ -40,3 +40,5 @@ Thumbs.db
 
 .eslintcache
 .angular
+
+/stats.html

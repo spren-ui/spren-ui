@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
   selector: 'spren-ui-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [RouterOutlet],
+  template: `
+    <router-outlet></router-outlet>
+  `,
 })
-export class AppComponent {
-  title = 'spren-ui';
-}
+export class AppComponent {}

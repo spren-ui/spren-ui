@@ -1,62 +1,51 @@
 {
   "name": "spren-ui",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "prefix": "spren-ui",
   "sourceRoot": "apps/spren-ui/src",
-  "tags": [],
+  "prefix": "spren-ui",
+  "tags": ["scope:web"],
+  "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/vite:build",
+      "outputs": [
+        "{options.outputPath}",
+        "{workspaceRoot}/dist/apps/spren-ui/.nitro",
+        "{workspaceRoot}/dist/apps/spren-ui/ssr",
+        "{workspaceRoot}/dist/apps/spren-ui/analog"
+      ],
       "options": {
-        "outputPath": "dist/apps/spren-ui",
-        "index": "apps/spren-ui/src/index.html",
         "main": "apps/spren-ui/src/main.ts",
-        "polyfills": ["zone.js"],
-        "tsConfig": "apps/spren-ui/tsconfig.app.json",
-        "assets": ["apps/spren-ui/src/favicon.ico", "apps/spren-ui/src/assets"],
-        "styles": ["apps/spren-ui/src/styles.css"],
-        "scripts": []
+        "configFile": "apps/spren-ui/vite.config.ts",
+        "outputPath": "{workspaceRoot}/dist/apps/spren-ui/client"
       },
       "configurations": {
-        "production": {
-          "budgets": [
-            {
-              "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
-            },
-            {
-              "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
-            }
-          ],
-          "outputHashing": "all"
-        },
         "development": {
-          "buildOptimizer": false,
-          "optimization": false,
-          "vendorChunk": true,
-          "extractLicenses": false,
-          "sourceMap": true,
-          "namedChunks": true
+          "mode": "development"
+        },
+        "production": {
+          "sourcemap": false,
+          "mode": "production"
         }
       },
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
-      "configurations": {
-        "production": {
-          "browserTarget": "spren-ui:build:production"
-        },
-        "development": {
-          "browserTarget": "spren-ui:build:development"
-        }
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "spren-ui:build",
+        "port": 4200
       },
-      "defaultConfiguration": "development"
+      "configurations": {
+        "development": {
+          "buildTarget": "spren-ui:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "spren-ui:build:production"
+        }
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -72,24 +61,8 @@
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "jestConfig": "apps/spren-ui/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "spren-ui:build"
-      }
+      "executor": "@nx/vite:test",
+      "outputs": ["apps/spren-ui/coverage"]
     }
   }
 }

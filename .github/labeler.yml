@@ -4,11 +4,14 @@
 '📌 area: shadcn':
   - any: ['packages/shadcn/**/*']
 
+'📌 area: web':
+  - any: ['apps/spren-ui/**/*']
+
 '📌 area: utils':
   - any: ['packages/utils/**/*']
 
-'📌 area: zag':
-  - any: ['packages/zag/**/*']
+'📌 area: zag-angular':
+  - any: ['packages/zag-angular/**/*']
 
 '📚 documentation':
   - any: ['**/*.md']
