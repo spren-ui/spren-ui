@@ -29,7 +29,7 @@
     "zagjs"
   ],
   "scripts": {
-    "build": "nx run components:build",
+    "build": "nx run components:build --tsConfig=tsconfig.lib.prod.json",
     "release": "changeset version",
     "pub:beta": "pnpm build && pnpm publish --no-git-checks --access public --tag beta",
     "pub:next": "pnpm build && pnpm publish --no-git-checks --access public --tag next",
