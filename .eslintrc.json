@@ -56,18 +56,10 @@
       }
     },
     {
-      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
-      "env": {
-        "jest": true
-      },
-      "extends": [
-        "plugin:jest/recommended",
-        "plugin:jest/style",
-        "plugin:jest-dom/recommended",
-        "plugin:testing-library/angular"
-      ],
+      "files": ["**/*.spec.{j,t}s?(x)", "**/*.test.{j,t}s?(x)"],
+      "extends": ["plugin:vitest/recommended", "plugin:jest-dom/recommended", "plugin:testing-library/angular"],
       "rules": {
-        "jest/consistent-test-it": ["error"],
+        "vitest/consistent-test-it": ["error"],
         "testing-library/prefer-explicit-assert": "error"
       }
     }

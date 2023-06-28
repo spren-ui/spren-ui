@@ -8,6 +8,8 @@ import tsConfigPaths from 'vite-tsconfig-paths';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
+    cacheDir: '../../node_modules/.vite/spren-ui',
+
     publicDir: 'src/public',
     optimizeDeps: {
       include: ['@angular/common', '@angular/forms'],
@@ -20,6 +22,7 @@ export default defineConfig(({ mode }) => {
         '~': path.resolve(__dirname, './src'),
       },
     },
+
     plugins: [
       analog({
         vite: {
@@ -32,11 +35,12 @@ export default defineConfig(({ mode }) => {
       visualizer() as Plugin,
       splitVendorChunkPlugin(),
     ],
+
     test: {
       globals: true,
       environment: 'jsdom',
       setupFiles: ['src/test-setup.ts'],
-      include: ['**/*.spec.ts'],
+      include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
       cache: {
         dir: `../../node_modules/.vitest`,
       },

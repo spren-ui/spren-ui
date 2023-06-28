@@ -62,7 +62,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["apps/spren-ui/coverage"]
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
     }
   }
 }

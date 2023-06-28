@@ -2,9 +2,8 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": ["node", "vitest/globals"],
-    "target": "es2020"
+    "types": ["node", "vitest/globals", "vitest/importMeta", "vite/client"]
   },
   "files": ["src/test-setup.ts"],
-  "include": ["src/**/*.test.ts", "src/**/*.spec.ts", "**/*.d.ts"]
+  "include": ["vite.config.ts", "src/**/*.test.ts", "src/**/*.spec.ts", "**/*.d.ts"]
 }
