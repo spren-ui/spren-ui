@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
     class: 'flex min-h-screen flex-col text-zinc-900 bg-zinc-50 px-4 pt-8 pb-32',
   },
   template: `
-    <main class=mx-auto flex-1o">
+    <main class="mx-auto flex-1">
       <section class="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
         <div class="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
           <svg
@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
             height="256.86978"
             preserveAspectRatio="xMidYMid meet"
             version="1.0"
-            class=mx-auto -mb-4 h-16 w-164"
+            class="mx-auto -mb-4 h-16 w-16"
           >
             <defs id="defs11">
               <clipPath id="id1">
@@ -81,7 +81,7 @@ import { Component } from '@angular/core';
           >
             Follow along on Twitter
           </a>
-          <h1 class=font-heading text-3xl font-medium sm:text-5xl md:text-6xl lg:text-7xll">
+          <h1 class="font-heading text-3xl font-medium sm:text-5xl md:text-6xl lg:text-7xl">
             <span class="text-[#DD0031]">Analog.</span>
             The fullstack Angular meta-framework
           </h1>
@@ -93,7 +93,7 @@ import { Component } from '@angular/core';
           <div class="space-x-4">
             <a
               href="https://analogjs.org"
-              class=inline-flex h-11 items-center justify-center rounded-md bg-zinc-950 px-8 text-sm font-medium text-zinc-50 ring-offset-background transition-colors hover:bg-zinc-950/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50d"
+              class="inline-flex h-11 items-center justify-center rounded-md bg-zinc-950 px-8 text-sm font-medium text-zinc-50 ring-offset-background transition-colors hover:bg-zinc-950/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               Read the docs
             </a>
@@ -101,7 +101,7 @@ import { Component } from '@angular/core';
               target="_blank"
               rel="noreferrer"
               href="https://github.com/analogjs/analog"
-              class=inline-flex h-11 items-center justify-center rounded-md border border-input px-8 text-sm font-medium ring-offset-background transition-colors hover:bg-zinc-50 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50d"
+              class="inline-flex h-11 items-center justify-center rounded-md border border-input px-8 text-sm font-medium ring-offset-background transition-colors hover:bg-zinc-50 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             >
               GitHub
             </a>
@@ -110,12 +110,12 @@ import { Component } from '@angular/core';
       </section>
       <section id="counter-demo" class="container py-8 md:py-12 lg:py-24">
         <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-          <h2 class=text-3xl font-medium leading-[1.1] text-[#DD0031]]">Counter</h2>
+          <h2 class="text-3xl font-medium leading-[1.1] text-[#DD0031]">Counter</h2>
           <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
             This is a simple interactive counter. Powered by Angular.
           </p>
           <button
-            class=inline-flex h-11 items-center justify-center rounded-md border border-input px-8 text-sm font-medium ring-offset-background transition-colors hover:bg-zinc-50 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50d"
+            class="inline-flex h-11 items-center justify-center rounded-md border border-input px-8 text-sm font-medium ring-offset-background transition-colors hover:bg-zinc-50 hover:text-zinc-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
             (click)="increment()"
           >
             Count:
