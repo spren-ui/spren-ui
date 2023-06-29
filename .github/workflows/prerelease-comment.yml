@@ -10,7 +10,7 @@ on:
 jobs:
   comment:
     if: |
-      github.repository_owner == 'SaulMoro' &&
+      github.repository_owner == 'spren-ui' &&
       ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     name: Write comment to the PR

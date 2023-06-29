@@ -1,10 +1,17 @@
 {
+  "projectName": "spren-ui",
+  "projectOwner": "spren-ui",
+  "repoType": "github",
+  "repoHost": "https://github.com",
   "files": [
     "packages/components/README.md"
   ],
-  "imageSize": 100,
-  "commit": false,
+  "imageSize": 64,
+  "commit": true,
   "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "commitType": "docs",
   "contributors": [
     {
       "login": "saulmoro",
@@ -20,12 +27,5 @@
         "design"
       ]
     }
-  ],
-  "contributorsPerLine": 7,
-  "projectName": "spren-ui",
-  "projectOwner": "SaulMoro",
-  "repoType": "github",
-  "repoHost": "https://github.com",
-  "skipCi": true,
-  "commitType": "docs"
+  ]
 }

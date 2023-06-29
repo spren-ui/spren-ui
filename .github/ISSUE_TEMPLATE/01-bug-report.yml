@@ -10,7 +10,7 @@ body:
     attributes:
       value: |
         Thanks for helping us grow. ❤️
-        Please search GitHub for a similar [issue](https://github.com/saulmoro/spren-ui/issues) or [PR](https://github.com/saulmoro/spren-ui/issues)  before submitting a new issue.
+        Please search GitHub for a similar [issue](https://github.com/spren-ui/spren-ui/issues) or [PR](https://github.com/spren-ui/spren-ui/issues)  before submitting a new issue.
 
   - type: textarea
     id: environment

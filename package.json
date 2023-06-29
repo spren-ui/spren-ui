@@ -30,12 +30,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/saulmoro/spren-ui.git"
+    "url": "https://github.com/spren-ui/spren-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/saulmoro/spren-ui/issues"
+    "url": "https://github.com/spren-ui/spren-ui/issues"
   },
-  "homepage": "https://github.com/saulmoro/spren-ui",
+  "homepage": "https://github.com/spren-ui/spren-ui",
   "keywords": [
     "angular",
     "components",

@@ -11,7 +11,7 @@ on:
 
 jobs:
   release:
-    if: ${{ github.repository_owner == 'SaulMoro' }}
+    if: ${{ github.repository_owner == 'spren-ui' }}
     name: Create a PR for release workflow
     runs-on: ubuntu-latest
     steps:
