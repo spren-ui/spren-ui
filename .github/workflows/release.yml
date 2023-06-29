@@ -29,6 +29,8 @@ jobs:
           node-version: 18
           cache: 'pnpm'
 
+      - uses: nrwl/nx-set-shas@v3
+
       - name: Install NPM Dependencies
         run: pnpm install
 
