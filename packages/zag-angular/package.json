@@ -2,10 +2,11 @@
   "name": "@spren-ui/zag-angular",
   "version": "0.0.1",
   "description": "The angular wrapper for zag",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "license": "MIT",
+  "type": "module",
   "author": {
     "name": "Saul Moro",
     "url": "https://twitter.com/SaulMoroDev"
