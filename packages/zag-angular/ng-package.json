@@ -1,8 +1,8 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/packages/components",
+  "dest": "../../dist/packages/zag-angular",
   "lib": {
     "entryFile": "index.ts"
   },
-  "allowedNonPeerDependencies": ["spren-ui", "zag-js"]
+  "allowedNonPeerDependencies": ["zag-js"]
 }

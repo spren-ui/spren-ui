@@ -1,0 +1,42 @@
+{
+  "name": "@spren-ui/zag-angular",
+  "version": "0.0.1",
+  "description": "The angular wrapper for zag",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Saul Moro",
+    "url": "https://twitter.com/SaulMoroDev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spren-ui/spren-ui.git",
+    "directory": "packages/zag-angular"
+  },
+  "bugs": {
+    "url": "https://github.com/spren-ui/spren-ui/issues"
+  },
+  "homepage": "https://github.com/spren-ui/spren-ui#readme",
+  "keywords": [
+    "zag",
+    "angular",
+    "ui-machines",
+    "state-machines",
+    "use-machine"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^16.1.0",
+    "@angular/core": "^16.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@zag-js/core": "~0.10.2",
+    "@zag-js/types": "~0.10.2"
+  },
+  "devDependencies": {
+    "@zag-js/utils": "^0.10.2"
+  },
+  "sideEffects": false
+}

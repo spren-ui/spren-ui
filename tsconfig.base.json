@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@spren-ui/components": ["packages/components/index.ts"],
-      "@spren-ui/components/*": ["packages/components/*"]
+      "@spren-ui/components/*": ["packages/components/*"],
+      "@spren-ui/zag-angular": ["packages/zag-angular/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

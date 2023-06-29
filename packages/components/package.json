@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/spren-ui/spren-ui/issues"
   },
-  "homepage": "https://github.com/spren-ui/spren-ui",
+  "homepage": "https://github.com/spren-ui/spren-ui#readme",
   "keywords": [
     "angular",
     "components",
@@ -37,15 +37,16 @@
   },
   "peerDependencies": {
     "@angular/common": "^16.1.0",
-    "@angular/core": "^16.1.0",
+    "@angular/core": "^16.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@spren-ui/zag-angular": "workspace:*",
     "@zag-js/accordion": "~0.10.2",
     "@zag-js/checkbox": "~0.10.2",
     "@zag-js/combobox": "~0.10.2",
     "@zag-js/switch": "~0.10.2",
     "@zag-js/tabs": "~0.10.2"
-  },
-  "dependencies": {
-    "tslib": "^2.1.0"
   },
   "sideEffects": false
 }
