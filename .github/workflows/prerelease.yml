@@ -4,9 +4,6 @@ name: Release - Beta
 on:
   pull_request:
     types: [labeled]
-    paths:
-      - '.changeset/**'
-      - 'packages/**'
     branches:
       - main
 
