@@ -43,6 +43,7 @@ jobs:
         with:
           cache: 'pnpm'
           cache-dependency-path: '**/pnpm-lock.yaml'
+      - uses: nrwl/nx-set-shas@v3
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
 
@@ -84,6 +85,7 @@ jobs:
         with:
           cache: 'pnpm'
           cache-dependency-path: '**/pnpm-lock.yaml'
+      - uses: nrwl/nx-set-shas@v3
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Build
@@ -104,6 +106,7 @@ jobs:
         with:
           cache: 'pnpm'
           cache-dependency-path: '**/pnpm-lock.yaml'
+      - uses: nrwl/nx-set-shas@v3
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Test
@@ -124,6 +127,7 @@ jobs:
         with:
           cache: 'pnpm'
           cache-dependency-path: '**/pnpm-lock.yaml'
+      - uses: nrwl/nx-set-shas@v3
       - name: Install
         run: pnpm install --frozen-lockfile --prefer-offline
       - name: Install Cypress
