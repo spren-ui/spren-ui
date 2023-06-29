@@ -13,12 +13,10 @@ jobs:
     permissions:
       actions: read
       contents: read
-      # Required by wagoid/commitlint-github-action
       pull-requests: read
     steps:
       - uses: actions/checkout@v3
         with:
-          # Required by wagoid/commitlint-github-action
           fetch-depth: 0
       - name: Lint commit messages
         uses: wagoid/commitlint-github-action@v5
@@ -76,6 +74,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -97,6 +97,8 @@ jobs:
       - build
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -118,6 +120,8 @@ jobs:
       - build
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: 18
