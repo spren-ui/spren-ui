@@ -1,6 +1,6 @@
 {
   "name": "@spren-ui/zag-angular",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The angular wrapper for zag",
   "license": "MIT",
   "publishConfig": {
@@ -28,7 +28,6 @@
   ],
   "scripts": {
     "build": "nx run zag-angular:build --tsConfig=tsconfig.lib.prod.json",
-    "release": "changeset version",
     "pub:beta": "pnpm publish ../../dist/packages/zag-angular --no-git-checks --access public --tag beta",
     "pub:next": "pnpm publish ../../dist/packages/zag-angular --no-git-checks --access public --tag next",
     "pub:release": "pnpm publish ../../dist/packages/zag-angular --access public"
@@ -43,6 +42,5 @@
     "@zag-js/utils": "^0.10.2",
     "tslib": "^2.3.0"
   },
-  "main": "index.ts",
   "sideEffects": false
 }

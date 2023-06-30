@@ -30,7 +30,6 @@
   ],
   "scripts": {
     "build": "nx run components:build --tsConfig=tsconfig.lib.prod.json",
-    "release": "changeset version",
     "pub:beta": "pnpm publish ../../dist/packages/components --no-git-checks --access public --tag beta",
     "pub:next": "pnpm publish ../../dist/packages/components --no-git-checks --access public --tag next",
     "pub:release": "pnpm publish ../../dist/packages/components --access public"
@@ -40,7 +39,7 @@
     "@angular/core": "~16.1.0"
   },
   "dependencies": {
-    "@spren-ui/zag-angular": "~0.0.2",
+    "@spren-ui/zag-angular": "~0.0.3",
     "@zag-js/accordion": "~0.10.2",
     "@zag-js/anatomy": "~0.10.2",
     "@zag-js/checkbox": "~0.10.2",
@@ -49,6 +48,8 @@
     "@zag-js/tabs": "~0.10.2",
     "tslib": "^2.3.0"
   },
-  "main": "index.ts",
+  "devDependencies": {
+    "@zag-js/types": "~0.10.2"
+  },
   "sideEffects": false
 }

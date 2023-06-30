@@ -5,6 +5,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
+    "preserveSymlinks": true,
     "types": []
   },
   "exclude": ["test-setup.ts", "vite.config.ts", "**/*.spec.ts", "**/*.test.ts"],

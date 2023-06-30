@@ -315,6 +315,10 @@ importers:
       tslib:
         specifier: ^2.3.0
         version: 2.5.3
+    devDependencies:
+      '@zag-js/types':
+        specifier: ~0.10.2
+        version: 0.10.2
 
   packages/zag-angular:
     dependencies:
@@ -5930,7 +5934,6 @@ packages:
     resolution: {integrity: sha512-a5VK1VfsYfvJs2JzLFMcM3yLf2NU+WQLql5ChV5qa9M2CLyUH+czgwKvjFFrSsvUWYSdVJyTxFEZI9sfNnQg/Q==}
     dependencies:
       csstype: 3.1.2
-    dev: false
 
   /@zag-js/utils@0.10.2:
     resolution: {integrity: sha512-CRxtBtPyNE9tjFnwxGZsU8Gr4kLAb1JhhpRv9yJKVs2aQp03+//USP0nn98L8qy3rIy7kVZtUL6+NosB3pkebA==}
@@ -7701,7 +7704,6 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: false
 
   /csv-generate@3.4.3:
     resolution: {integrity: sha512-w/T+rqR0vwvHqWs/1ZyMDWtHHSJaN06klRqJXBEpDJaM/+dZkso0OKh1VcuuYvK3XM53KysVNq8Ko/epCK8wOw==}
