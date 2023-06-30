@@ -292,7 +292,7 @@ importers:
         specifier: ~16.1.0
         version: 16.1.2(rxjs@7.8.1)(zone.js@0.13.1)
       '@spren-ui/zag-angular':
-        specifier: ~0.0.2
+        specifier: ~0.0.3
         version: link:../zag-angular
       '@zag-js/accordion':
         specifier: ~0.10.2
