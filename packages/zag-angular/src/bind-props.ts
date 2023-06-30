@@ -11,6 +11,7 @@ import {
   inject,
   signal,
 } from '@angular/core';
+import type { Dict } from '@zag-js/core/dist/types';
 
 import type { SplitArgs } from './types';
 
@@ -33,13 +34,13 @@ export abstract class HostBindProps implements AfterViewInit {
   readonly #renderer2 = inject(Renderer2);
   readonly #nativeElement = inject(ElementRef).nativeElement;
 
-  abstract readonly props: Signal<SplitArgs>;
+  abstract readonly props: Signal<SplitArgs | Dict>;
 
   ngAfterViewInit(): void {
     this.#bindProps(this.#customBindProps?.bindProps ?? this.props);
   }
 
-  #bindProps(props: Signal<SplitArgs>) {
+  #bindProps(props: Signal<SplitArgs | Dict>) {
     const nativeElement = this.#customBindProps?.bindPropsElement?.nativeElement ?? this.#nativeElement;
 
     effect(
@@ -52,7 +53,7 @@ export abstract class HostBindProps implements AfterViewInit {
         Object.entries(attrs).forEach(([key, value]) => {
           isFalsy(value)
             ? this.#renderer2.removeAttribute(nativeElement, key)
-            : this.#renderer2.setAttribute(nativeElement, key, value);
+            : this.#renderer2.setAttribute(nativeElement, key, value as string);
         });
 
         Object.entries(restProps).forEach(([key, value]) => {
