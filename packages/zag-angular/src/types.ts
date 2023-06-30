@@ -1,5 +1,5 @@
-import { InjectOptions, Injector } from '@angular/core';
-import type { Dict } from '@zag-js/core/dist/types';
+import { type InjectOptions, type Injector } from '@angular/core';
+import { type Dict } from '@zag-js/core/dist/types';
 
 export type SplitArgs<T = Dict> = {
   attrs: T;
@@ -22,5 +22,3 @@ export type OnMountOptions = {
    */
   injectOptions?: InjectOptions;
 };
-
-export type { Dict };

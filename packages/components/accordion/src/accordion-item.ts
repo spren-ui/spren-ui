@@ -1,5 +1,14 @@
-import { Directive, Input, OnChanges, SimpleChanges, booleanAttribute, computed, inject, signal } from '@angular/core';
-import type { ItemProps } from '@zag-js/accordion';
+import {
+  Directive,
+  Input,
+  type OnChanges,
+  type SimpleChanges,
+  booleanAttribute,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
+import { type ItemProps } from '@zag-js/accordion';
 
 import { propsChanges } from '@spren-ui/components/utils';
 import { HostBindProps } from '@spren-ui/zag-angular';

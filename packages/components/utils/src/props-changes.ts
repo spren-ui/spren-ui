@@ -1,4 +1,4 @@
-import { SimpleChanges, WritableSignal } from '@angular/core';
+import { type SimpleChanges, type WritableSignal } from '@angular/core';
 
 import { mergeProps } from '@spren-ui/zag-angular';
 

@@ -2,7 +2,7 @@
 import analog from '@analogjs/platform';
 import * as path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer';
-import { Plugin, defineConfig, splitVendorChunkPlugin } from 'vite';
+import { type Plugin, defineConfig, splitVendorChunkPlugin } from 'vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/

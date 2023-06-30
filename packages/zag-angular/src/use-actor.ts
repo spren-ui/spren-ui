@@ -1,5 +1,5 @@
 import { DestroyRef, inject, signal } from '@angular/core';
-import type { Machine, StateMachine as S } from '@zag-js/core';
+import { type Machine, type StateMachine as S } from '@zag-js/core';
 
 import { onMount } from './on-mount';
 

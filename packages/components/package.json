@@ -1,10 +1,12 @@
 {
   "name": "@spren-ui/components",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.3",
   "description": "Angular headless components",
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "../../dist/packages/components",
+    "linkDirectory": true
   },
   "author": {
     "name": "Saul Moro",
@@ -30,26 +32,26 @@
   ],
   "scripts": {
     "build": "nx run components:build --tsConfig=tsconfig.lib.prod.json",
-    "pub:beta": "pnpm publish ../../dist/packages/components --no-git-checks --access public --tag beta",
-    "pub:next": "pnpm publish ../../dist/packages/components --no-git-checks --access public --tag next",
-    "pub:release": "pnpm publish ../../dist/packages/components --access public"
+    "pub:beta": "pnpm publish --no-git-checks --tag beta",
+    "pub:next": "pnpm publish --no-git-checks --tag next",
+    "pub:release": "pnpm publish"
   },
   "peerDependencies": {
     "@angular/common": "~16.1.0",
     "@angular/core": "~16.1.0"
   },
   "dependencies": {
-    "@spren-ui/zag-angular": "~0.0.3",
-    "@zag-js/accordion": "~0.10.2",
-    "@zag-js/anatomy": "~0.10.2",
-    "@zag-js/checkbox": "~0.10.2",
-    "@zag-js/combobox": "~0.10.2",
-    "@zag-js/switch": "~0.10.2",
-    "@zag-js/tabs": "~0.10.2",
+    "@spren-ui/zag-angular": "workspace:*",
+    "@zag-js/accordion": "~0.10.3",
+    "@zag-js/anatomy": "~0.10.3",
+    "@zag-js/checkbox": "~0.10.3",
+    "@zag-js/combobox": "~0.10.3",
+    "@zag-js/switch": "~0.10.3",
+    "@zag-js/tabs": "~0.10.3",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@zag-js/types": "~0.10.2"
+    "@zag-js/types": "~0.10.3"
   },
   "sideEffects": false
 }

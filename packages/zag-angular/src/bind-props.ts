@@ -1,5 +1,5 @@
 import {
-  AfterViewInit,
+  type AfterViewInit,
   Directive,
   ElementRef,
   InjectionToken,
@@ -11,9 +11,9 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import type { Dict } from '@zag-js/core/dist/types';
+import { type Dict } from '@zag-js/core/dist/types';
 
-import type { SplitArgs } from './types';
+import { type SplitArgs } from './types';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isFalsy = (value: any) => value === undefined || value === null;

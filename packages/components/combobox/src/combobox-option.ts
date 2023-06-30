@@ -1,4 +1,13 @@
-import { Directive, Input, OnChanges, SimpleChanges, booleanAttribute, computed, inject, signal } from '@angular/core';
+import {
+  Directive,
+  Input,
+  type OnChanges,
+  type SimpleChanges,
+  booleanAttribute,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import { type OptionProps } from '@zag-js/combobox';
 
 import { propsChanges } from '@spren-ui/components/utils';
