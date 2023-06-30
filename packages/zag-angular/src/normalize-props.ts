@@ -1,6 +1,5 @@
 import type { Dict } from '@zag-js/core/dist/types';
 import { type PropTypes, createNormalizer } from '@zag-js/types';
-import { isString } from '@zag-js/utils';
 
 import { type SplitArgs } from './types';
 
@@ -30,7 +29,7 @@ export const normalizeProps = createNormalizer<PropTypes<SplitArgs>>((props: Dic
     if (isAngularAttr(key)) {
       normalized.attrs[key] = value;
     } else if (key === 'children') {
-      if (isString(value)) {
+      if (typeof value === 'string') {
         normalized.props['innerHTML'] = value;
       }
     } else {

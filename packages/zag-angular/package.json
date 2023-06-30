@@ -1,6 +1,6 @@
 {
   "name": "@spren-ui/zag-angular",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The angular wrapper for zag",
   "license": "MIT",
   "publishConfig": {
@@ -37,9 +37,8 @@
     "@angular/core": "~16.1.0"
   },
   "dependencies": {
-    "@zag-js/core": "~0.10.2",
-    "@zag-js/types": "~0.10.2",
-    "@zag-js/utils": "^0.10.2",
+    "@zag-js/core": "~0.10.3",
+    "@zag-js/types": "~0.10.3",
     "tslib": "^2.3.0"
   },
   "sideEffects": false

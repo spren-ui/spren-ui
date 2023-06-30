@@ -1,7 +1,14 @@
 import { AfterViewInit, Directive, Injector, inject } from '@angular/core';
-import { callAll } from '@zag-js/utils';
 
 import type { OnMountOptions } from './types';
+
+const callAll =
+  <T extends (...a: any[]) => void>(...fns: (T | undefined)[]) =>
+  (...a: Parameters<T>) => {
+    fns.forEach(function (fn) {
+      fn?.(...a);
+    });
+  };
 
 /**
  * ! onMount hack until angular adds new hooks lifecycle
@@ -10,9 +17,9 @@ import type { OnMountOptions } from './types';
   standalone: true,
 })
 export class OnMount implements AfterViewInit {
-  #onMountChainFns?: () => void;
+  #onMountChainFns?: VoidFunction;
 
-  onMount(fn: () => void) {
+  onMount(fn: VoidFunction) {
     this.#onMountChainFns = callAll(this.#onMountChainFns, fn);
   }
 
