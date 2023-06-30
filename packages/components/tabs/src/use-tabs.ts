@@ -1,8 +1,8 @@
 import { DOCUMENT } from '@angular/common';
-import { Signal, computed, inject } from '@angular/core';
+import { type Signal, computed, inject } from '@angular/core';
 import * as tabs from '@zag-js/tabs';
 
-import { Optional } from '@spren-ui/components/utils';
+import { type Optional } from '@spren-ui/components/utils';
 import { normalizeProps, useMachine } from '@spren-ui/zag-angular';
 
 // Increasing integer for generating unique ids for tabs components.

@@ -2,7 +2,7 @@ import { Component, Input, signal } from '@angular/core';
 import { render, screen, waitFor } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 
-import { Checkbox, CheckboxProps } from './checkbox';
+import { Checkbox, type CheckboxProps } from './checkbox';
 import { CheckboxControl } from './checkbox-control';
 import { CheckboxInput } from './checkbox-input';
 import { CheckboxLabel } from './checkbox-label';

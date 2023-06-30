@@ -1,4 +1,4 @@
-import type { Dict } from '@zag-js/core/dist/types';
+import { type Dict } from '@zag-js/core/dist/types';
 import { type PropTypes, createNormalizer } from '@zag-js/types';
 
 import { type SplitArgs } from './types';

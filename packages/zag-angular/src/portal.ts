@@ -5,7 +5,7 @@ import {
   Directive,
   ElementRef,
   Input,
-  OnInit,
+  type OnInit,
   Renderer2,
   TemplateRef,
   inject,

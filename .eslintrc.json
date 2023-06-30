@@ -28,8 +28,14 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
+      "plugins": ["import"],
       "extends": ["plugin:@nx/typescript", "plugin:tailwindcss/recommended"],
       "rules": {
+        "@typescript-eslint/consistent-type-imports": [
+          "error",
+          { "prefer": "type-imports", "fixStyle": "inline-type-imports" }
+        ],
+        "import/consistent-type-specifier-style": ["error", "prefer-inline"],
         "@typescript-eslint/naming-convention": [
           "error",
           {
@@ -39,6 +45,7 @@
             "format": null
           }
         ],
+
         "tailwindcss/no-custom-classname": "off",
         "tailwindcss/classnames-order": "error"
       }

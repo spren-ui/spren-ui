@@ -1,9 +1,18 @@
-import { Directive, Input, OnChanges, SimpleChanges, booleanAttribute, computed, inject, signal } from '@angular/core';
+import {
+  Directive,
+  Input,
+  type OnChanges,
+  type SimpleChanges,
+  booleanAttribute,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 
 import { propsChanges } from '@spren-ui/components/utils';
 import { HostBindProps, OnMount } from '@spren-ui/zag-angular';
 
-import { UseSwitchProps, useSwitch } from './use-switch';
+import { type UseSwitchProps, useSwitch } from './use-switch';
 
 export type SwitchProps = UseSwitchProps;
 

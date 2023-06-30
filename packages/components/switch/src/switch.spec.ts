@@ -2,7 +2,7 @@ import { Component, Input, signal } from '@angular/core';
 import { render, screen, waitFor } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 
-import { Switch, SwitchProps } from './switch';
+import { Switch, type SwitchProps } from './switch';
 import { SwitchControl } from './switch-control';
 import { SwitchInput } from './switch-input';
 import { SwitchLabel } from './switch-label';

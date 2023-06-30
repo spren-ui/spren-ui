@@ -1,4 +1,4 @@
-import { Directive, Input, OnChanges, SimpleChanges, computed, inject, signal } from '@angular/core';
+import { Directive, Input, type OnChanges, type SimpleChanges, computed, inject, signal } from '@angular/core';
 import { type ContentProps } from '@zag-js/tabs';
 
 import { propsChanges } from '@spren-ui/components/utils';

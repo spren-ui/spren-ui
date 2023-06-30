@@ -1,6 +1,6 @@
-import { AfterViewInit, Directive, Injector, inject } from '@angular/core';
+import { type AfterViewInit, Directive, Injector, inject } from '@angular/core';
 
-import type { OnMountOptions } from './types';
+import { type OnMountOptions } from './types';
 
 const callAll =
   <T extends (...a: any[]) => void>(...fns: (T | undefined)[]) =>
