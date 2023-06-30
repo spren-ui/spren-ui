@@ -3,6 +3,6 @@ module.exports = {
   rules: {
     'body-leading-blank': [2, 'always'],
     'footer-leading-blank': [2, 'always'],
-    'scope-enum': [2, 'always', ['components', 'shadcn', 'web', 'utils', 'zag-angular', 'ci']],
+    'scope-enum': [2, 'always', ['components', 'shadcn', 'web', 'utils', 'zag-angular', 'ci', 'release']],
   },
 };
