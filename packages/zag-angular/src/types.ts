@@ -22,3 +22,5 @@ export type OnMountOptions = {
    */
   injectOptions?: InjectOptions;
 };
+
+export type { Dict };

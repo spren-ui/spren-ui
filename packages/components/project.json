@@ -26,7 +26,22 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/components/**/*.ts", "packages/components/**/*.html"]
+        "lintFilePatterns": [
+          "packages/components/**/*.ts",
+          "packages/components/**/*.html",
+          "packages/components/accordion/**/*.ts",
+          "packages/components/accordion/**/*.html",
+          "packages/components/checkbox/**/*.ts",
+          "packages/components/checkbox/**/*.html",
+          "packages/components/combobox/**/*.ts",
+          "packages/components/combobox/**/*.html",
+          "packages/components/switch/**/*.ts",
+          "packages/components/switch/**/*.html",
+          "packages/components/tabs/**/*.ts",
+          "packages/components/tabs/**/*.html",
+          "packages/components/utils/**/*.ts",
+          "packages/components/utils/**/*.html"
+        ]
       }
     },
     "test": {

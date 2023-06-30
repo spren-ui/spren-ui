@@ -6,7 +6,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "type": "module",
   "author": {
     "name": "Saul Moro",
     "url": "https://twitter.com/SaulMoroDev"
@@ -37,17 +36,19 @@
     "pub:release": "pnpm publish ../../dist/packages/components --access public"
   },
   "peerDependencies": {
-    "@angular/common": "^16.1.0",
-    "@angular/core": "^16.1.0"
+    "@angular/common": "~16.1.0",
+    "@angular/core": "~16.1.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
-    "@spren-ui/zag-angular": "workspace:*",
+    "@spren-ui/zag-angular": "~0.0.2",
     "@zag-js/accordion": "~0.10.2",
+    "@zag-js/anatomy": "~0.10.2",
     "@zag-js/checkbox": "~0.10.2",
     "@zag-js/combobox": "~0.10.2",
     "@zag-js/switch": "~0.10.2",
-    "@zag-js/tabs": "~0.10.2"
+    "@zag-js/tabs": "~0.10.2",
+    "tslib": "^2.3.0"
   },
+  "main": "index.ts",
   "sideEffects": false
 }

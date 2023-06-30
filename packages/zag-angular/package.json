@@ -1,12 +1,11 @@
 {
   "name": "@spren-ui/zag-angular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The angular wrapper for zag",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "type": "module",
   "author": {
     "name": "Saul Moro",
     "url": "https://twitter.com/SaulMoroDev"
@@ -27,17 +26,23 @@
     "state-machines",
     "use-machine"
   ],
+  "scripts": {
+    "build": "nx run zag-angular:build --tsConfig=tsconfig.lib.prod.json",
+    "release": "changeset version",
+    "pub:beta": "pnpm publish ../../dist/packages/zag-angular --no-git-checks --access public --tag beta",
+    "pub:next": "pnpm publish ../../dist/packages/zag-angular --no-git-checks --access public --tag next",
+    "pub:release": "pnpm publish ../../dist/packages/zag-angular --access public"
+  },
   "peerDependencies": {
-    "@angular/common": "^16.1.0",
-    "@angular/core": "^16.1.0"
+    "@angular/common": "~16.1.0",
+    "@angular/core": "~16.1.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0",
     "@zag-js/core": "~0.10.2",
-    "@zag-js/types": "~0.10.2"
+    "@zag-js/types": "~0.10.2",
+    "@zag-js/utils": "^0.10.2",
+    "tslib": "^2.3.0"
   },
-  "devDependencies": {
-    "@zag-js/utils": "^0.10.2"
-  },
+  "main": "index.ts",
   "sideEffects": false
 }
