@@ -4,7 +4,9 @@
   "description": "The angular wrapper for zag",
   "license": "MIT",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "../../dist/packages/zag-angular",
+    "linkDirectory": true
   },
   "author": {
     "name": "Saul Moro",
@@ -28,9 +30,9 @@
   ],
   "scripts": {
     "build": "nx run zag-angular:build --tsConfig=tsconfig.lib.prod.json",
-    "pub:beta": "pnpm publish ../../dist/packages/zag-angular --no-git-checks --access public --tag beta",
-    "pub:next": "pnpm publish ../../dist/packages/zag-angular --no-git-checks --access public --tag next",
-    "pub:release": "pnpm publish ../../dist/packages/zag-angular --access public"
+    "pub:beta": "pnpm publish --no-git-checks --tag beta",
+    "pub:next": "pnpm publish --no-git-checks --tag next",
+    "pub:release": "pnpm publish"
   },
   "peerDependencies": {
     "@angular/common": "~16.1.0",
