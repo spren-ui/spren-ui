@@ -1,0 +1,11 @@
+[data-scope='combobox'][data-part='option'][data-highlighted] {
+  background-color: greenyellow;
+}
+
+[data-scope='combobox'][data-part='content'] {
+  list-style-type: none;
+  max-width: 240px;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
