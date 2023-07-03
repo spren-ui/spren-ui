@@ -60,6 +60,13 @@ export const Basic: Story = {
       props: { options, handleInputChange },
       template: `
       <!--
+      comboboxData: Pick<ComboboxOptionProps, 'label' | 'value' | 'disabled'>[] = [
+        { label: 'ReactJS', value: 'react' },
+        { label: 'SolidJS', value: 'solid' },
+        { label: 'VueJS', value: 'vue', disabled: true },
+        { label: 'AngularJS', value: 'angular' },
+      ];
+
       options = signal(comboboxData);
       handleInputChange: ComboboxProps['onInputChange'] = ({ value }) => {
         const filtered = comboboxData.filter((item) => item.label.toLowerCase().includes(value.toLowerCase()));
