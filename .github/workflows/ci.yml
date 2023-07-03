@@ -31,19 +31,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: corepack enable
-      - run: pnpm --version
-      - uses: actions/setup-node@v3
-        with:
-          cache: 'pnpm'
-          cache-dependency-path: '**/pnpm-lock.yaml'
-      - uses: nrwl/nx-set-shas@v3
-      - name: Install
-        run: pnpm install --frozen-lockfile --prefer-offline
-
+      - uses: ./.github/composite-actions/install
       - name: Lint
         run: pnpm affected:lint
 
@@ -53,20 +41,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: corepack enable
-      - run: pnpm --version
-      - uses: actions/setup-node@v3
-        with:
-          cache: 'pnpm'
-          cache-dependency-path: '**/pnpm-lock.yaml'
-      - name: Install
-        run: pnpm install --frozen-lockfile --prefer-offline
-
+      - uses: ./.github/composite-actions/install
       - name: Validate
-        run: pnpm exec prettier --check .
+        run: pnpm prettier --check .
 
   build:
     runs-on: ubuntu-latest
@@ -74,18 +51,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: corepack enable
-      - run: pnpm --version
-      - uses: actions/setup-node@v3
-        with:
-          cache: 'pnpm'
-          cache-dependency-path: '**/pnpm-lock.yaml'
-      - uses: nrwl/nx-set-shas@v3
-      - name: Install
-        run: pnpm install --frozen-lockfile --prefer-offline
+      - uses: ./.github/composite-actions/install
       - name: Build
         run: pnpm affected:build
 
@@ -97,18 +63,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: corepack enable
-      - run: pnpm --version
-      - uses: actions/setup-node@v3
-        with:
-          cache: 'pnpm'
-          cache-dependency-path: '**/pnpm-lock.yaml'
-      - uses: nrwl/nx-set-shas@v3
-      - name: Install
-        run: pnpm install --frozen-lockfile --prefer-offline
+      - uses: ./.github/composite-actions/install
       - name: Test
         run: pnpm affected:test
 
@@ -120,18 +75,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: corepack enable
-      - run: pnpm --version
-      - uses: actions/setup-node@v3
-        with:
-          cache: 'pnpm'
-          cache-dependency-path: '**/pnpm-lock.yaml'
-      - uses: nrwl/nx-set-shas@v3
-      - name: Install
-        run: pnpm install --frozen-lockfile --prefer-offline
+      - uses: ./.github/composite-actions/install
       - name: Install Cypress
         run: npx cypress install
       - name: End-to-end test
