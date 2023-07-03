@@ -76,21 +76,21 @@ export const RenderProp: Story = {
   render: () => ({
     template: `
       <div sprenAccordion collapsible>
-        <div sprenAccordionItem value="1" #c1="accordionItem">
+        <div sprenAccordionItem value="1" #i1="accordionItem">
           <h3>
-            <button sprenAccordionTrigger>{{ c1.accordionItem().isOpen ? 'Close' : 'Open' }}</button>
+            <button sprenAccordionTrigger>{{ i1.accordionItem().isOpen ? 'Close' : 'Open' }}</button>
           </h3>
           <div sprenAccordionContent>Panel 1</div>
         </div>
-        <div sprenAccordionItem value="2" #c2="accordionItem">
+        <div sprenAccordionItem value="2" #i2="accordionItem">
           <h3>
-            <button sprenAccordionTrigger>{{ c2.accordionItem().isOpen ? 'Close' : 'Open' }}</button>
+            <button sprenAccordionTrigger>{{ i2.accordionItem().isOpen ? 'Close' : 'Open' }}</button>
           </h3>
           <div sprenAccordionContent>Panel 2</div>
         </div>
-        <div sprenAccordionItem value="3" #c3="accordionItem">
+        <div sprenAccordionItem value="3" #i3="accordionItem">
           <h3>
-            <button sprenAccordionTrigger>{{ c3.accordionItem().isOpen ? 'Close' : 'Open' }}</button>
+            <button sprenAccordionTrigger>{{ i3.accordionItem().isOpen ? 'Close' : 'Open' }}</button>
           </h3>
           <div sprenAccordionContent>Panel 3</div>
         </div>
