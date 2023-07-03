@@ -2,6 +2,7 @@ import { Component, Input, signal } from '@angular/core';
 import { render, screen, waitFor } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 
+import { type CheckedState } from '../';
 import { Checkbox, type CheckboxProps } from './checkbox';
 import { CheckboxControl } from './checkbox-control';
 import { CheckboxInput } from './checkbox-input';
@@ -55,7 +56,7 @@ describe('Checkbox', () => {
       `,
     })
     class UnderTestControlledComponent {
-      checked = signal(false);
+      checked = signal<CheckedState>(false);
     }
 
     const user = userEvent.setup();
