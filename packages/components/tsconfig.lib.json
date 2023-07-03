@@ -8,6 +8,6 @@
     "preserveSymlinks": true,
     "types": []
   },
-  "exclude": ["test-setup.ts", "vite.config.ts", "**/*.spec.ts", "**/*.test.ts"],
+  "exclude": ["test-setup.ts", "vite.config.ts", "**/*.spec.ts", "**/*.test.ts", "**/*.stories.ts", "**/*.stories.js"],
   "include": ["**/*.ts"]
 }

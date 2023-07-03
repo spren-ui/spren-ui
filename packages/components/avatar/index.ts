@@ -1,6 +1,4 @@
-export type { ItemState } from '@zag-js/accordion';
-export { AccordionContent } from './src/avatar-fallback';
-export { AccordionTrigger } from './src/accordion-trigger';
-export { Accordion, AccordionContext, type AccordionProps } from './src/avatar';
-export { AccordionItem, AccordionItemContext, type AccordionItemProps } from './src/avatar-image';
-export { accordionAnatomy } from './src/avatar.anatomy';
+export { Avatar, AvatarContext, type AvatarProps } from './src/avatar';
+export { AvatarFallback } from './src/avatar-fallback';
+export { AvatarImage } from './src/avatar-image';
+export { avatarAnatomy } from './src/avatar.anatomy';
