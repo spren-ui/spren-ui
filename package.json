@@ -84,7 +84,6 @@
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
-    "@compodoc/compodoc": "^1.1.21",
     "@nx/angular": "16.4.0",
     "@nx/cypress": "16.4.0",
     "@nx/eslint-plugin": "16.4.0",
