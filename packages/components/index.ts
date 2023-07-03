@@ -1,4 +1,5 @@
 export * from '@spren-ui/components/accordion';
+export * from '@spren-ui/components/avatar';
 export * from '@spren-ui/components/checkbox';
 export * from '@spren-ui/components/combobox';
 export * from '@spren-ui/components/switch';

@@ -303,6 +303,9 @@ importers:
       '@zag-js/anatomy':
         specifier: ~0.10.3
         version: 0.10.3
+      '@zag-js/avatar':
+        specifier: ^0.10.3
+        version: 0.10.3
       '@zag-js/checkbox':
         specifier: ~0.10.3
         version: 0.10.3
@@ -5761,6 +5764,17 @@ packages:
     resolution: {integrity: sha512-NUDfKl+T+FoJsBqo22kUjL0xIQyPtszRIedGoS/WeAfjv0Dx8HWapfUVtRpd56hzp25t9y/upF2BhJc+GHcRaA==}
     dependencies:
       '@zag-js/dom-query': 0.10.3
+    dev: false
+
+  /@zag-js/avatar@0.10.3:
+    resolution: {integrity: sha512-YZn8k+lQAfwLvIqozOgjxc0p1vbYh6QqwlJMNucyHk22SFgtGs3Ja+SF6CxBL9gBbdo7YiLiQq88F1lONjQIog==}
+    dependencies:
+      '@zag-js/anatomy': 0.10.3
+      '@zag-js/core': 0.10.3
+      '@zag-js/dom-query': 0.10.3
+      '@zag-js/mutation-observer': 0.10.3
+      '@zag-js/types': 0.10.3
+      '@zag-js/utils': 0.10.3
     dev: false
 
   /@zag-js/checkbox@0.10.3:

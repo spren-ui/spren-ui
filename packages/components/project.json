@@ -31,6 +31,8 @@
           "packages/components/**/*.html",
           "packages/components/accordion/**/*.ts",
           "packages/components/accordion/**/*.html",
+          "packages/components/avatar/**/*.ts",
+          "packages/components/avatar/**/*.html",
           "packages/components/checkbox/**/*.ts",
           "packages/components/checkbox/**/*.html",
           "packages/components/combobox/**/*.ts",

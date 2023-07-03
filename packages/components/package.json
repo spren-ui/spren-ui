@@ -3,11 +3,6 @@
   "version": "0.0.1-beta.3",
   "description": "Angular headless components",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "directory": "../../dist/packages/components",
-    "linkDirectory": true
-  },
   "author": {
     "name": "Saul Moro",
     "url": "https://twitter.com/SaulMoroDev"
@@ -30,6 +25,11 @@
     "ui",
     "zagjs"
   ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "../../dist/packages/components",
+    "linkDirectory": true
+  },
   "scripts": {
     "build": "nx run components:build --tsConfig=tsconfig.lib.prod.json",
     "pub:beta": "pnpm publish --no-git-checks --tag beta",
@@ -44,6 +44,7 @@
     "@spren-ui/zag-angular": "workspace:*",
     "@zag-js/accordion": "~0.10.3",
     "@zag-js/anatomy": "~0.10.3",
+    "@zag-js/avatar": "~0.10.3",
     "@zag-js/checkbox": "~0.10.3",
     "@zag-js/combobox": "~0.10.3",
     "@zag-js/switch": "~0.10.3",
