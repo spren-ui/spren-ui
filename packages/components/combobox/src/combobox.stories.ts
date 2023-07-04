@@ -17,9 +17,8 @@ import {
 import { Portal } from '../../';
 import './combobox.css';
 
-export default {
+const meta = {
   title: 'Combobox',
-  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [
@@ -37,7 +36,8 @@ export default {
       ],
     }),
   ],
-} as Meta<ComboboxProps>;
+} satisfies Meta<ComboboxProps>;
+export default meta;
 
 type Story = StoryObj<ComboboxProps>;
 

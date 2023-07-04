@@ -1,0 +1,48 @@
+import { Canvas, Controls, Meta, Primary, Title } from '@storybook/blocks';
+
+import * as SwitchStories from '../switch.stories';
+
+<Meta of={SwitchStories} />
+
+<Title />
+
+The Switch is an interactive, binary component designed for your applications.
+It offers a clear, visual interface for users to enable or disable specific
+settings, features, or functionalities
+
+## Usage
+
+Start by importing the necessary components from the package:
+
+```tsx
+import { Switch, SwitchControl, SwitchInput, SwitchLabel, SwitchThumb } from '@spren-ui/components/switch';
+```
+
+Here is a basic example:
+
+<Primary />
+
+<Controls />
+
+## Controlled Switch
+
+For a controlled Switch component, the state of the toggle is managed using the
+checked prop, and updates when the onChange event handler is called:
+
+<Canvas of={SwitchStories.Controlled} />
+
+## Render Prop Usage
+
+The Switch component also allows for a render prop, granting direct access to
+its internal state. This enables you to dynamically adjust and customize aspects
+of the component based on its current state:
+
+<Canvas of={SwitchStories.RenderProp} />
+
+## Conclusion
+
+The Switch component provides a straightforward, intuitive solution for
+incorporating toggle functionality into your applications. With its flexibility
+for both controlled and uncontrolled scenarios and provision for dynamic
+customization through its render prop, it can accommodate various use cases
+effectively.

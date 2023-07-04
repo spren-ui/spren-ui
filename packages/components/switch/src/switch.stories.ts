@@ -8,15 +8,15 @@ import { SwitchLabel } from './switch-label';
 import { SwitchThumb } from './switch-thumb';
 import './switch.css';
 
-export default {
+const meta = {
   title: 'Switch',
-  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [Switch, SwitchControl, SwitchInput, SwitchLabel, SwitchThumb],
     }),
   ],
-} as Meta<SwitchProps>;
+} satisfies Meta<SwitchProps>;
+export default meta;
 
 type Story = StoryObj<SwitchProps>;
 

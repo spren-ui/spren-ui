@@ -9,15 +9,15 @@ import { CheckboxInput } from './checkbox-input';
 import { CheckboxLabel } from './checkbox-label';
 import './checkbox.css';
 
-export default {
+const meta = {
   title: 'Checkbox',
-  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel],
     }),
   ],
-} as Meta<CheckboxProps>;
+} satisfies Meta<CheckboxProps>;
+export default meta;
 
 type Story = StoryObj<CheckboxProps>;
 

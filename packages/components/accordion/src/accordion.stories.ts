@@ -1,22 +1,22 @@
 import { signal } from '@angular/core';
 import { type Meta, type StoryObj, moduleMetadata } from '@storybook/angular';
 
-import { Accordion, type AccordionProps } from './accordion';
+import { Accordion, type AccordionContext, type AccordionProps } from './accordion';
 import { AccordionContent } from './accordion-content';
 import { AccordionItem } from './accordion-item';
 import { AccordionTrigger } from './accordion-trigger';
 
-export default {
+const meta = {
   title: 'Accordion',
-  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [Accordion, AccordionContent, AccordionItem, AccordionTrigger],
     }),
   ],
-} as Meta<AccordionProps>;
+} satisfies Meta<AccordionContext>;
+export default meta;
 
-type Story = StoryObj<AccordionProps>;
+type Story = StoryObj<AccordionContext>;
 
 export const Basic: Story = {
   render: () => ({

@@ -8,15 +8,15 @@ import { TabsList } from './tabs-list';
 import { TabsTrigger } from './tabs-trigger';
 import './tabs.css';
 
-export default {
+const meta = {
   title: 'Tabs',
-  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [TabsContent, TabsIndicator, TabsList, TabsTrigger, Tabs],
     }),
   ],
-} as Meta<TabsProps>;
+} satisfies Meta<TabsProps>;
+export default meta;
 
 type Story = StoryObj<TabsProps>;
 

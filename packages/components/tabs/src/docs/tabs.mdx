@@ -1,0 +1,72 @@
+import { Canvas, Controls, Meta, Primary, Title } from '@storybook/blocks';
+
+import * as TabsStories from '../tabs.stories';
+
+<Meta of={TabsStories} />
+
+<Title />
+
+The Tabs component is a powerful and flexible navigation tool for your
+applications. It offers various interaction modes, accessibility features, and
+the ability to display different contents based on the selected tab.
+
+## Usage
+
+Start by importing the necessary components from the package:
+
+```tsx
+import { TabContent, TabIndicator, TabList, TabTrigger, Tabs } from '@spren-ui/components/tabs';
+```
+
+Here is a basic example:
+
+<Primary />
+
+<Controls />
+
+## Initial Tab
+
+To set a default tab on initial render, use the `value` prop:
+
+<Canvas of={TabsStories.InitialTab} />
+
+## Tab Indicator
+
+To provide a visual cue for the selected tab, use the `TabIndicator` component:
+
+<Canvas of={TabsStories.Indicator} />
+
+## Disabled Tab
+
+To disable a tab, simply pass the `disabled` prop to the `TabTrigger` component:
+
+<Canvas of={TabsStories.DisabledTab} />
+
+## Controlled Tabs
+
+To create a controlled Tabs component, manage the current selected tab using the
+`value` prop and update it when the `onChange` event handler is called:
+
+<Canvas of={TabsStories.Controlled} />
+
+## Vertical Tabs
+
+The default orientation of the tabs is `horizontal`. To change the orientation,
+set the `orientation` prop to `vertical`.
+
+<Canvas of={TabsStories.Vertical} />
+
+## Manual Activation
+
+By default, the tab can be selected when it receives focus from either the
+keyboard or pointer interaction. This is called automatic tab activation.
+
+In contrast, manual tab activation means the tab is selected with the <kbd>Enter</kbd> key or by clicking on the tab.
+
+<Canvas of={TabsStories.Manual} />
+
+## Conclusion
+
+The Tabs component offers a comprehensive and flexible solution for adding
+tabbed navigation to your applications. With a wide variety of customization
+options and features, it can accommodate various use cases and designs.

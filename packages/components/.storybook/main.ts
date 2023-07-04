@@ -1,12 +1,9 @@
 import { type StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
-  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../**/*.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
-    {
-      name: '@storybook/addon-essentials',
-      options: { backgrounds: false, outline: false, actions: false },
-    },
+    '@storybook/addon-essentials',
     '@storybook/addon-a11y',
     {
       name: '@storybook/addon-styling',
@@ -18,8 +15,7 @@ const config: StorybookConfig = {
     options: {},
   },
   docs: {
-    autodocs: true,
-    defaultName: 'Docs',
+    autodocs: 'tag',
   },
 };
 

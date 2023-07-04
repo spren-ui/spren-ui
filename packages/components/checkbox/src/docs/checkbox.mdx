@@ -1,0 +1,55 @@
+import { Canvas, Controls, Meta, Primary, Title } from '@storybook/blocks';
+
+import * as CheckboxStories from '../checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+<Title />
+
+The Checkbox is a widely used input component for toggling between checked and
+unchecked states. It supports basic, controlled, and indeterminate states.
+
+## Usage
+
+Start by importing the necessary components from the package:
+
+```tsx
+import { Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel } from '@spren-ui/components/checkbox';
+```
+
+Here is a basic example:
+
+<Primary />
+
+<Controls />
+
+## Controlled Checkbox
+
+To create a controlled Checkbox component, manage the state of the checked
+status using the `checked` prop and update it when the `onChange` event handler
+is called:
+
+<Canvas of={CheckboxStories.Controlled} />
+
+## Indeterminate Checkbox
+
+In some cases, you may need a checkbox to represent a state that is neither
+checked nor unchecked, known as the indeterminate state. This can be achieved by
+setting the `checked` prop to `indeterminate`:
+
+<Canvas of={CheckboxStories.Indeterminate} />
+
+## Render Prop Usage
+
+For cases where you need more flexibility in rendering, the Checkbox component
+offers the use of a render prop. The render prop function gives you access to
+the checkbox's API, allowing you to customize the checkbox control's rendering:
+
+<Canvas of={CheckboxStories.RenderProp} />
+
+## Conclusion
+
+The Checkbox component provides a robust and flexible solution for toggleable
+input needs in your applications. With its support for controlled and
+indeterminate states, as well as custom render props, it offers a wide range of
+design possibilities and use cases.

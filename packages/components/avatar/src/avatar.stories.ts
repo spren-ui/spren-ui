@@ -5,15 +5,15 @@ import { AvatarFallback } from './avatar-fallback';
 import { AvatarImage } from './avatar-image';
 import './avatar.css';
 
-export default {
+const meta = {
   title: 'Avatar',
-  tags: ['autodocs'],
   decorators: [
     moduleMetadata({
       imports: [Avatar, AvatarImage, AvatarFallback],
     }),
   ],
-} as Meta<AvatarProps>;
+} satisfies Meta<AvatarProps>;
+export default meta;
 
 type Story = StoryObj<AvatarProps>;
 
