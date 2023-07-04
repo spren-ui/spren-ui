@@ -5,7 +5,7 @@ import { HostBindProps } from '@spren-ui/zag-angular';
 import { AvatarContext } from './avatar';
 
 @Directive({
-  selector: 'span[sprenAvatarFallback]',
+  selector: '[sprenAvatarFallback]',
   standalone: true,
   exportAs: 'avatarFallback',
 })
