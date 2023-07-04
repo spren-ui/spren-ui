@@ -64,7 +64,7 @@ export abstract class HostBindProps implements AfterViewInit {
 
         style &&
           Object.entries(style).forEach(([key, value]) => {
-            this.#renderer2.setStyle(nativeElement, key, value);
+            this.#renderer2.setStyle(nativeElement, key, value === undefined ? null : value);
           });
       },
       { injector: this.#injector },

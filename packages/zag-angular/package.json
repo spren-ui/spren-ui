@@ -3,11 +3,6 @@
   "version": "0.0.4",
   "description": "The angular wrapper for zag",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "directory": "../../dist/packages/zag-angular",
-    "linkDirectory": true
-  },
   "author": {
     "name": "Saul Moro",
     "url": "https://twitter.com/SaulMoroDev"
@@ -28,6 +23,11 @@
     "state-machines",
     "use-machine"
   ],
+  "publishConfig": {
+    "access": "public",
+    "directory": "../../dist/packages/zag-angular",
+    "linkDirectory": true
+  },
   "scripts": {
     "build": "nx run zag-angular:build --tsConfig=tsconfig.lib.prod.json",
     "pub:beta": "pnpm publish --no-git-checks --tag beta",

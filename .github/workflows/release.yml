@@ -20,19 +20,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Use PNPM
-        uses: pnpm/action-setup@v2.2.4
-
-      - name: Use Node.js 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'pnpm'
-
-      - uses: nrwl/nx-set-shas@v3
-
-      - name: Install NPM Dependencies
-        run: pnpm install
+      - uses: ./.github/composite-actions/install
 
       - name: Check for errors
         run: pnpm affected:lint

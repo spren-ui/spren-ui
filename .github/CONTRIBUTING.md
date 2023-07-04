@@ -12,7 +12,7 @@ Spren UI is an MIT-licensed open source project with its ongoing development mad
 Source code for the Spren UI exists under the `packages/` folder. To contribute features or bug fixes to the framework, locate the relevant code in one of the `packages` sub-folder. In addition to the `create-spren-ui` sub-folder, there is a sub-folder for each of the `npm` packages in the `@spren-ui/*` scope:
 
 - `packages/components` → `@spren-ui/components`
-- `packages/utils` → `@spren-ui/utils`
+- `packages/zag-angular` → `@spren-ui/zag-angular`
 
 ### Setup
 
