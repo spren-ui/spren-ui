@@ -1,23 +1,23 @@
 {
-  "name": "zag-angular",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/zag-angular",
-  "prefix": "spren",
-  "tags": ["scope:spren-ui"],
+  "name": "shadcn-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/shadcn/utils",
+  "prefix": "ui",
+  "tags": ["scope:shadcn"],
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nx/angular:package",
+      "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "packages/zag-angular/ng-package.json"
+        "project": "packages/shadcn/utils/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "packages/zag-angular/tsconfig.lib.prod.json"
+          "tsConfig": "packages/shadcn/utils/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "packages/zag-angular/tsconfig.lib.json"
+          "tsConfig": "packages/shadcn/utils/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -26,7 +26,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/zag-angular/**/*.ts", "packages/zag-angular/**/*.html"]
+        "lintFilePatterns": ["packages/shadcn/utils/**/*.ts", "packages/shadcn/utils/**/*.html"]
       }
     },
     "test": {
