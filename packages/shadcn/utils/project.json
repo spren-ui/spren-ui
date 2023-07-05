@@ -26,15 +26,21 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/shadcn/utils/**/*.ts", "packages/shadcn/utils/**/*.html"]
+        "lintFilePatterns": [
+          "packages/shadcn/utils/**/*.ts",
+          "packages/shadcn/utils/**/*.html",
+          "packages/shadcn/utils/cn/**/*.ts",
+          "packages/shadcn/utils/cn/**/*.html",
+          "packages/shadcn/utils/value-accesor/**/*.ts",
+          "packages/shadcn/utils/value-accesor/**/*.html",
+          "packages/shadcn/utils/is-component/**/*.ts",
+          "packages/shadcn/utils/is-component/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/vite:test",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
-      "options": {
-        "passWithNoTests": true
-      },
       "configurations": {
         "ci": {
           "ci": true,
