@@ -99,6 +99,7 @@
     "@storybook/addon-essentials": "^7.0.25",
     "@storybook/addon-styling": "^1.3.2",
     "@storybook/angular": "^7.0.25",
+    "@storybook/core-common": "^7.0.25",
     "@storybook/core-server": "^7.0.25",
     "@testing-library/angular": "^14.1.1",
     "@testing-library/cypress": "^9.0.0",

@@ -44,6 +44,47 @@
           "codeCoverage": true
         }
       }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "packages/shadcn/components/.storybook",
+        "browserTarget": "shadcn-components:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/shadcn-components",
+        "configDir": "packages/shadcn/components/.storybook",
+        "browserTarget": "shadcn-components:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "shadcn-components:build-storybook",
+        "staticFilePath": "dist/storybook/shadcn-components"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "shadcn-components:build-storybook:ci"
+        }
+      }
     }
   }
 }
