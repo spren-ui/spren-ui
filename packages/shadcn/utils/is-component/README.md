@@ -1,3 +1,3 @@
-# @bmed-workspace/shared/ui/core/is-component
+# @spren-ui/shadcn/utils/is-component
 
-Secondary entry point of `@bmed-workspace/shared/ui/core`. It can be used by importing from `@bmed-workspace/shared/ui/core/is-component`.
+Secondary entry point of `@spren-ui/shadcn/utils`. It can be used by importing from `@spren-ui/shadcn/utils/is-component`.

@@ -27,7 +27,12 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/shadcn/components/**/*.ts", "packages/shadcn/components/**/*.html"]
+        "lintFilePatterns": [
+          "packages/shadcn/components/**/*.ts",
+          "packages/shadcn/components/**/*.html",
+          "packages/shadcn/components/accordion/**/*.ts",
+          "packages/shadcn/components/accordion/**/*.html"
+        ]
       }
     },
     "test": {

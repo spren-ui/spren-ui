@@ -1,3 +1,3 @@
-# @bmed-workspace/shared/ui/core/value-accesor
+# @spren-ui/shadcn/utils/value-accesor
 
-Secondary entry point of `@bmed-workspace/shared/ui/core`. It can be used by importing from `@bmed-workspace/shared/ui/core/value-accesor`.
+Secondary entry point of `@spren-ui/shadcn/utils`. It can be used by importing from `@spren-ui/shadcn/utils/value-accesor`.

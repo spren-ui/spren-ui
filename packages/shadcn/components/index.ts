@@ -1,1 +1,1 @@
-export const TODO = 'TODO';
+export * from '@spren-ui/shadcn/components/accordion';

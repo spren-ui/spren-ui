@@ -1,3 +1,3 @@
-# @bmed-workspace/shared/ui/core/cn
+# @spren-ui/shadcn/utils/cn
 
-Secondary entry point of `@bmed-workspace/shared/ui/core`. It can be used by importing from `@bmed-workspace/shared/ui/core/cn`.
+Secondary entry point of `@spren-ui/shadcn/utils`. It can be used by importing from `@spren-ui/shadcn/utils/cn`.
