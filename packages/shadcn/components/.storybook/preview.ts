@@ -1,4 +1,3 @@
-import { withThemeByClassName } from '@storybook/addon-styling';
 import { type Preview } from '@storybook/angular';
 
 import './styles/fonts.css';
@@ -14,7 +13,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [
+  /* decorators: [
     withThemeByClassName({
       themes: {
         light: '',
@@ -22,6 +21,6 @@ const preview: Preview = {
       },
       defaultTheme: 'light',
     }),
-  ],
+  ], */
 };
 export default preview;

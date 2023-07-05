@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@spren-ui/components/accordion';
 import { Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel } from '@spren-ui/components/checkbox';
+import { AccordionComponents } from '@spren-ui/shadcn/components/accordion';
 
 @Component({
   selector: 'spren-ui-analog-welcome',
@@ -20,6 +21,7 @@ import { Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel } from '@spren-
     CheckboxControl,
     CheckboxInput,
     CheckboxLabel,
+    AccordionComponents,
   ],
   host: {
     class: 'flex min-h-screen flex-col text-zinc-900 bg-zinc-50 px-4 pt-8 pb-32',
@@ -146,6 +148,23 @@ import { Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel } from '@spren-
             <div sprenAccordionContent>Panel 3</div>
           </div>
         </div>
+      </section>
+
+      <section class="mt-4">
+        <ui-accordion collapsible>
+          <ui-accordion-item value="0">
+            <ui-accordion-trigger>First section</ui-accordion-trigger>
+            <ui-accordion-content>Panel 1</ui-accordion-content>
+          </ui-accordion-item>
+          <ui-accordion-item value="1">
+            <ui-accordion-trigger>Second section</ui-accordion-trigger>
+            <ui-accordion-content>Panel 2</ui-accordion-content>
+          </ui-accordion-item>
+          <ui-accordion-item value="2">
+            <ui-accordion-trigger>Last section</ui-accordion-trigger>
+            <ui-accordion-content forceMount>Panel 3</ui-accordion-content>
+          </ui-accordion-item>
+        </ui-accordion>
       </section>
 
       <section class="mt-4">

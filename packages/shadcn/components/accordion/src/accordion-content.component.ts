@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import {
+  type AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -29,7 +30,7 @@ import { cn } from '@spren-ui/shadcn/utils/cn';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AccordionContent {
+export class AccordionContent implements AfterViewInit {
   readonly #nativeElement = inject(ElementRef).nativeElement;
   readonly #cdr = inject(ChangeDetectorRef);
   readonly #accordionItem = inject(AccordionContentHeadless).accordionItem;
@@ -40,7 +41,7 @@ export class AccordionContent {
   @Input() class? = '';
   @HostBinding('class') get elementClass() {
     return cn(
-      'block', // for animations
+      this.forceMount ? '[&:not([hidden])]:block' : 'block', // for animations
       'overflow-hidden text-sm transition-all data-[expanded]:animate-accordion-down [&:not([data-expanded])]:animate-accordion-up',
       this.class,
     );
@@ -55,23 +56,35 @@ export class AccordionContent {
     return this.#width ? `${this.#width.toFixed(1)}px` : undefined;
   }
 
-  readonly #calculateDimensionsEffect = effect((onCleanup) => {
-    const isPresent = this.isPresent(); // track isPresent
-    const rAF = requestAnimationFrame(() => isPresent && this.#calculateDimensions());
-    onCleanup(() => cancelAnimationFrame(rAF));
-  });
+  ngAfterViewInit(): void {
+    // only run on browser
+    if (this.forceMount && this.#nativeElement) {
+      requestAnimationFrame(() => this.#calculateDimensions());
+    }
+  }
+
+  readonly #calculateDimensionsEffect =
+    this.#nativeElement && // only run on browser
+    effect((onCleanup) => {
+      const isPresent = this.isPresent(); // track isPresent
+      const rAF = requestAnimationFrame(() => isPresent && this.#calculateDimensions());
+      onCleanup(() => cancelAnimationFrame(rAF));
+    });
   #originalStyles?: Record<string, string>;
 
   #calculateDimensions() {
     const node = this.#nativeElement;
+    if (!node || !node['getBoundingClientRect']) return;
 
     this.#originalStyles = this.#originalStyles || {
       transitionDuration: node.style.transitionDuration,
       animationName: node.style.animationName,
+      hidden: node.hidden,
     };
     // block any animations/transitions so the element renders at its full dimensions
     node.style.transitionDuration = '0s';
     node.style.animationName = 'none';
+    node.hidden = false;
 
     // get width and height from full dimensions
     const rect = node.getBoundingClientRect();
@@ -80,6 +93,7 @@ export class AccordionContent {
 
     node.style.transitionDuration = this.#originalStyles['transitionDuration'];
     node.style.animationName = this.#originalStyles['animationName'];
+    node.hidden = this.#originalStyles['hidden'];
 
     this.#cdr.markForCheck();
   }

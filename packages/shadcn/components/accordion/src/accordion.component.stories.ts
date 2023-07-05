@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj, moduleMetadata } from '@storybook/angular';
 
-import { AccordionComponents } from '..';
+import { AccordionComponents, type AccordionProps } from '..';
 import { Accordion } from './accordion.component';
 
 const meta = {
@@ -8,16 +8,16 @@ const meta = {
   tags: ['autodocs'],
   component: Accordion,
   decorators: [moduleMetadata({ imports: [AccordionComponents] })],
-} satisfies Meta<Accordion>;
+} satisfies Meta<Accordion & AccordionProps>;
 export default meta;
 
-type Story = StoryObj<Accordion>;
+type Story = StoryObj<Accordion & AccordionProps>;
 
 export const Primary: Story = {
   render: (args) => ({
     props: args,
     template: `
-      <ui-accordion>
+      <ui-accordion [value]="value" [collapsible]="collapsible">
         <ui-accordion-item value="0">
           <ui-accordion-trigger>First section</ui-accordion-trigger>
           <ui-accordion-content>Panel 1</ui-accordion-content>
@@ -33,5 +33,8 @@ export const Primary: Story = {
       </ui-accordion>
     `,
   }),
-  args: {},
+  args: {
+    collapsible: true,
+    value: '0',
+  },
 };
