@@ -13,6 +13,7 @@ export default defineConfig({
   ],
 
   test: {
+    name: 'shadcn-components',
     globals: true,
     environment: 'jsdom',
     setupFiles: ['test-setup.ts'],
