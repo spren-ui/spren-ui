@@ -1,7 +1,19 @@
-import { type Preview } from '@storybook/angular';
+import { withThemeByClassName } from '@storybook/addon-styling';
+import { type Preview, componentWrapperDecorator } from '@storybook/angular';
 
 import './styles/fonts.css';
 import './styles/tailwind.css';
+
+export const decorators = [
+  withThemeByClassName({
+    themes: {
+      light: '',
+      dark: 'dark',
+    },
+    defaultTheme: 'light',
+  }),
+  componentWrapperDecorator((story) => `<div class="bg-background text-foreground">${story}</div>`),
+];
 
 const preview: Preview = {
   parameters: {
@@ -13,14 +25,5 @@ const preview: Preview = {
       },
     },
   },
-  /* decorators: [
-    withThemeByClassName({
-      themes: {
-        light: '',
-        dark: 'dark',
-      },
-      defaultTheme: 'light',
-    }),
-  ], */
 };
 export default preview;
