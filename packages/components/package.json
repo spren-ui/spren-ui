@@ -42,17 +42,17 @@
   },
   "dependencies": {
     "@spren-ui/zag-angular": "workspace:*",
-    "@zag-js/accordion": "~0.10.3",
-    "@zag-js/anatomy": "~0.10.3",
-    "@zag-js/avatar": "~0.10.3",
-    "@zag-js/checkbox": "~0.10.3",
-    "@zag-js/combobox": "~0.10.3",
-    "@zag-js/switch": "~0.10.3",
-    "@zag-js/tabs": "~0.10.3",
+    "@zag-js/accordion": "~0.10.4",
+    "@zag-js/anatomy": "~0.10.4",
+    "@zag-js/avatar": "~0.10.4",
+    "@zag-js/checkbox": "~0.10.4",
+    "@zag-js/combobox": "~0.10.4",
+    "@zag-js/switch": "~0.10.4",
+    "@zag-js/tabs": "~0.10.4",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@zag-js/types": "~0.10.3"
+    "@zag-js/types": "~0.10.4"
   },
   "sideEffects": false
 }

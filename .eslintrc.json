@@ -18,8 +18,16 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "scope:spren-ui",
+                "onlyDependOnLibsWithTags": ["scope:spren-ui"]
+              },
+              {
+                "sourceTag": "scope:shadcn",
+                "onlyDependOnLibsWithTags": ["scope:shadcn", "scope:spren-ui"]
+              },
+              {
+                "sourceTag": "scope:web",
+                "onlyDependOnLibsWithTags": ["scope:web", "scope:shadcn", "scope:spren-ui"]
               }
             ]
           }

@@ -13,6 +13,7 @@ export default defineConfig({
   ],
 
   test: {
+    name: '@spren-ui/zag-angular',
     globals: true,
     environment: 'jsdom',
     setupFiles: ['test-setup.ts'],

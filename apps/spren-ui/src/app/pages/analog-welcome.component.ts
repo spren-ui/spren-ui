@@ -1,10 +1,28 @@
 import { AsyncPipe, DatePipe, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@spren-ui/components/accordion';
+import { Checkbox, CheckboxControl, CheckboxInput, CheckboxLabel } from '@spren-ui/components/checkbox';
+import { AccordionComponents } from '@spren-ui/shadcn/components/accordion';
+
 @Component({
   selector: 'spren-ui-analog-welcome',
   standalone: true,
-  imports: [AsyncPipe, NgFor, DatePipe, NgIf],
+  imports: [
+    AsyncPipe,
+    NgFor,
+    DatePipe,
+    NgIf,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+    Checkbox,
+    CheckboxControl,
+    CheckboxInput,
+    CheckboxLabel,
+    AccordionComponents,
+  ],
   host: {
     class: 'flex min-h-screen flex-col text-zinc-900 bg-zinc-50 px-4 pt-8 pb-32',
   },
@@ -108,6 +126,104 @@ import { Component } from '@angular/core';
           </div>
         </div>
       </section>
+
+      <section>
+        <div sprenAccordion value="2" collapsible>
+          <div sprenAccordionItem value="1">
+            <h3>
+              <button sprenAccordionTrigger>Section 1 title</button>
+            </h3>
+            <div sprenAccordionContent>Panel 1</div>
+          </div>
+          <div sprenAccordionItem value="2">
+            <h3>
+              <button sprenAccordionTrigger>Section 2 title</button>
+            </h3>
+            <div sprenAccordionContent>Panel 2</div>
+          </div>
+          <div sprenAccordionItem value="3" disabled>
+            <h3>
+              <button sprenAccordionTrigger>Section 3 title disabled</button>
+            </h3>
+            <div sprenAccordionContent>Panel 3</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-4">
+        <ui-accordion collapsible>
+          <ui-accordion-item value="0">
+            <ui-accordion-trigger>First section</ui-accordion-trigger>
+            <ui-accordion-content>Panel 1</ui-accordion-content>
+          </ui-accordion-item>
+          <ui-accordion-item value="1">
+            <ui-accordion-trigger>Second section</ui-accordion-trigger>
+            <ui-accordion-content>Panel 2</ui-accordion-content>
+          </ui-accordion-item>
+          <ui-accordion-item value="2">
+            <ui-accordion-trigger>Last section</ui-accordion-trigger>
+            <ui-accordion-content forceMount>Panel 3</ui-accordion-content>
+          </ui-accordion-item>
+        </ui-accordion>
+      </section>
+
+      <section class="mt-4">
+        <label
+          sprenCheckbox
+          class="flex cursor-pointer items-center gap-2 data-[disabled]:cursor-not-allowed"
+          [checked]="true"
+          #c="checkbox"
+        >
+          <span
+            sprenCheckboxLabel
+            class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70"
+          >
+            Checkbox
+          </span>
+          <input sprenCheckboxInput class="peer" />
+          <div
+            sprenCheckboxControl
+            class="h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background
+      peer-focus-visible:outline-none peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2
+      peer-disabled:cursor-not-allowed peer-disabled:opacity-50 data-[checked]:bg-primary data-[indeterminate]:bg-primary
+      data-[checked]:text-primary-foreground data-[indeterminate]:text-primary-foreground"
+          >
+            <span class="flex items-center justify-center text-current">
+              <svg
+                *ngIf="c.checkbox().isChecked"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-4 w-3"
+              >
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <svg
+                *ngIf="c.checkbox().isIndeterminate"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="-mt-px h-4 w-3"
+              >
+                <line x1="5" x2="19" y1="12" y2="12"></line>
+              </svg>
+            </span>
+          </div>
+        </label>
+      </section>
+
       <section id="counter-demo" class="container py-8 md:py-12 lg:py-24">
         <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 class="text-3xl font-medium leading-[1.1] text-[#DD0031]">Counter</h2>

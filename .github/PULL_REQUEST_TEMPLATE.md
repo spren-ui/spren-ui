@@ -26,7 +26,6 @@ What kind of change does this PR introduce?
 - [ ] components
 - [ ] shadcn
 - [ ] web
-- [ ] utils
 - [ ] zag-angular
 
 ## What is the current behavior?

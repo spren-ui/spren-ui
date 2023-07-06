@@ -14,6 +14,9 @@ export default defineConfig(({ mode }) => {
     optimizeDeps: {
       include: ['@angular/common', '@angular/forms'],
     },
+    ssr: {
+      noExternal: ['@spren-ui/**'],
+    },
     build: {
       target: ['es2020'],
     },

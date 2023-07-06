@@ -1,0 +1,90 @@
+{
+  "name": "shadcn-components",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/shadcn/components",
+  "prefix": "ui",
+  "tags": ["scope:shadcn"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "packages/shadcn/components/ng-package.json",
+        "tailwindConfig": "packages/shadcn/components/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/shadcn/components/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/shadcn/components/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shadcn/components/**/*.ts",
+          "packages/shadcn/components/**/*.html",
+          "packages/shadcn/components/accordion/**/*.ts",
+          "packages/shadcn/components/accordion/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "packages/shadcn/components/.storybook",
+        "browserTarget": "shadcn-components:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/shadcn-components",
+        "configDir": "packages/shadcn/components/.storybook",
+        "browserTarget": "shadcn-components:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "shadcn-components:build-storybook",
+        "staticFilePath": "dist/storybook/shadcn-components"
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "shadcn-components:build-storybook:ci"
+        }
+      }
+    }
+  }
+}

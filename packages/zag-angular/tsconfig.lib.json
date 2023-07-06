@@ -9,5 +9,5 @@
     "types": []
   },
   "exclude": ["test-setup.ts", "vite.config.ts", "**/*.spec.ts", "**/*.test.ts"],
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "index.ts"]
 }

@@ -13,6 +13,7 @@ export default defineConfig({
   ],
 
   test: {
+    name: '@spren-ui/components',
     globals: true,
     environment: 'jsdom',
     setupFiles: ['test-setup.ts'],

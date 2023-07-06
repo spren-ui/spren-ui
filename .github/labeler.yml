@@ -7,9 +7,6 @@
 '📌 area: web':
   - any: ['apps/spren-ui/**/*']
 
-'📌 area: utils':
-  - any: ['packages/utils/**/*']
-
 '📌 area: zag-angular':
   - any: ['packages/zag-angular/**/*']
 

@@ -28,7 +28,6 @@ body:
         - components
         - shadcn
         - web
-        - utils
         - zag-angular
     validations:
       required: true

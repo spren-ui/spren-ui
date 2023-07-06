@@ -17,6 +17,10 @@
     "paths": {
       "@spren-ui/components": ["packages/components/index.ts"],
       "@spren-ui/components/*": ["packages/components/*"],
+      "@spren-ui/shadcn/components": ["packages/shadcn/components/index.ts"],
+      "@spren-ui/shadcn/components/*": ["packages/shadcn/components/*"],
+      "@spren-ui/shadcn/utils": ["packages/shadcn/utils/index.ts"],
+      "@spren-ui/shadcn/utils/*": ["packages/shadcn/utils/*"],
       "@spren-ui/zag-angular": ["packages/zag-angular/index.ts"]
     }
   },

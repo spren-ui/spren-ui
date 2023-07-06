@@ -1,0 +1,52 @@
+{
+  "name": "shadcn-utils",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/shadcn/utils",
+  "prefix": "ui",
+  "tags": ["scope:shadcn"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "packages/shadcn/utils/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "packages/shadcn/utils/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "packages/shadcn/utils/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/shadcn/utils/**/*.ts",
+          "packages/shadcn/utils/**/*.html",
+          "packages/shadcn/utils/cn/**/*.ts",
+          "packages/shadcn/utils/cn/**/*.html",
+          "packages/shadcn/utils/value-accesor/**/*.ts",
+          "packages/shadcn/utils/value-accesor/**/*.html",
+          "packages/shadcn/utils/is-component/**/*.ts",
+          "packages/shadcn/utils/is-component/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  }
+}

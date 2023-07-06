@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/components",
   "prefix": "spren",
-  "tags": ["scope:components"],
+  "tags": ["scope:spren-ui"],
   "projectType": "library",
   "targets": {
     "build": {
@@ -48,7 +48,13 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
     },
     "storybook": {
       "executor": "@storybook/angular:start-storybook",
