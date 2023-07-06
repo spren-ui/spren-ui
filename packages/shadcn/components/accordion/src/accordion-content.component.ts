@@ -1,6 +1,5 @@
 import { NgIf } from '@angular/common';
 import {
-  type AfterViewInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -30,7 +29,7 @@ import { cn } from '@spren-ui/shadcn/utils/cn';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AccordionContent implements AfterViewInit {
+export class AccordionContent {
   readonly #nativeElement = inject(ElementRef).nativeElement;
   readonly #cdr = inject(ChangeDetectorRef);
   readonly #accordionItem = inject(AccordionContentHeadless).accordionItem;
@@ -56,25 +55,19 @@ export class AccordionContent implements AfterViewInit {
     return this.#width ? `${this.#width.toFixed(1)}px` : undefined;
   }
 
-  ngAfterViewInit(): void {
-    // only run on browser
-    if (this.forceMount && this.#nativeElement) {
-      requestAnimationFrame(() => this.#calculateDimensions());
-    }
-  }
-
+  readonly #isBrowser = !!this.#nativeElement?.['getBoundingClientRect'];
   readonly #calculateDimensionsEffect =
-    this.#nativeElement && // only run on browser
+    this.#isBrowser &&
     effect((onCleanup) => {
-      const isPresent = this.isPresent(); // track isPresent
-      const rAF = requestAnimationFrame(() => isPresent && this.#calculateDimensions());
-      onCleanup(() => cancelAnimationFrame(rAF));
+      if (this.isPresent()) {
+        const rAF = requestAnimationFrame(() => this.#calculateDimensions());
+        onCleanup(() => cancelAnimationFrame(rAF));
+      }
     });
   #originalStyles?: Record<string, string>;
 
   #calculateDimensions() {
     const node = this.#nativeElement;
-    if (!node || !node['getBoundingClientRect']) return;
 
     this.#originalStyles = this.#originalStyles || {
       transitionDuration: node.style.transitionDuration,
