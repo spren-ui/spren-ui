@@ -1,5 +1,14 @@
 # @spren-ui/components
 
+## 0.0.6
+
+### Patch Changes
+
+- [#7](https://github.com/spren-ui/spren-ui/pull/7) [`b2baf71`](https://github.com/spren-ui/spren-ui/commit/b2baf7194c138b8f411f4ae1179dda82e1f3381a) Thanks [@SaulMoro](https://github.com/SaulMoro)! - First shadcn component example
+  Update zag dependencies
+- Updated dependencies [[`b2baf71`](https://github.com/spren-ui/spren-ui/commit/b2baf7194c138b8f411f4ae1179dda82e1f3381a)]:
+  - @spren-ui/zag-angular@0.0.6
+
 ## 0.0.5
 
 ### Patch Changes
