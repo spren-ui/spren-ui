@@ -1,5 +1,5 @@
 {
-  "name": "@spren-ui/shadcn/components",
+  "name": "shadcn-components",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/shadcn/components",
   "prefix": "ui",
