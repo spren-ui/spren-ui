@@ -13,7 +13,7 @@ export default defineConfig({
   ],
 
   test: {
-    name: 'shadcn-utils',
+    name: '@spren-ui/shadcn/utils',
     globals: true,
     environment: 'jsdom',
     setupFiles: ['test-setup.ts'],
