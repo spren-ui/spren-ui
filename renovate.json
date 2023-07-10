@@ -40,6 +40,14 @@
       "matchPackagePatterns": ["eslint*"]
     },
     {
+      "groupName": "storybook",
+      "matchPackagePatterns": ["@storybook*"]
+    },
+    {
+      "groupName": "changesets",
+      "matchPackagePatterns": ["@changesets*"]
+    },
+    {
       "groupName": "nx",
       "matchPackagePatterns": ["^@nx/", "^nx$"],
       "enabled": false

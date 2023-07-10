@@ -39,8 +39,8 @@
     "@angular/core": "~16.1.0"
   },
   "dependencies": {
-    "@zag-js/core": "~0.10.4",
-    "@zag-js/types": "~0.10.4",
+    "@zag-js/core": "~0.10.5",
+    "@zag-js/types": "~0.10.5",
     "tslib": "^2.3.0"
   },
   "sideEffects": false
