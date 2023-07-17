@@ -1,5 +1,6 @@
 import { type InjectOptions, type Injector } from '@angular/core';
-import { type Dict } from '@zag-js/core/dist/types';
+
+export type Dict<T = any> = Record<string, T>;
 
 export type SplitArgs<T = Dict> = {
   attrs: T;

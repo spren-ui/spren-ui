@@ -2,7 +2,7 @@ import { Component, signal } from '@angular/core';
 import { render, screen, waitFor } from '@testing-library/angular';
 import userEvent from '@testing-library/user-event';
 
-import { Tabs, TabsContext } from './tabs';
+import { Tabs, TabsContext, type TabsProps } from './tabs';
 import { TabsContent } from './tabs-content';
 import { TabsIndicator } from './tabs-indicator';
 import { TabsList } from './tabs-list';
@@ -36,13 +36,13 @@ import { TabsTrigger } from './tabs-trigger';
   `,
 })
 class UnderTestComponent extends TabsContext {
-  readonly focusedVal = signal<any>(undefined);
-  readonly changedVal = signal<any>(undefined);
+  readonly focusedVal = signal<TabsProps['value']>(null);
+  readonly changedVal = signal<TabsProps['value']>(null);
 
-  handleFocus = ({ value }: any) => {
+  handleFocus: TabsProps['onFocus'] = ({ value }) => {
     this.focusedVal.set(value);
   };
-  handleChange = ({ value }: any) => {
+  handleChange: TabsProps['onChange'] = ({ value }) => {
     this.changedVal.set(value);
   };
 }

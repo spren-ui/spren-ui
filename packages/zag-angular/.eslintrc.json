@@ -21,6 +21,7 @@
             "style": "kebab-case"
           }
         ],
+        "@typescript-eslint/no-explicit-any": "warn",
         "@angular-eslint/directive-class-suffix": "off",
         "@angular-eslint/no-input-rename": "off"
       },

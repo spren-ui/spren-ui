@@ -2,6 +2,7 @@ import { type SimpleChanges, type WritableSignal } from '@angular/core';
 
 import { mergeProps } from '@spren-ui/zag-angular';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function propsChanges<T extends Record<string, any>>(
   inputs: WritableSignal<T>,
   changes: SimpleChanges,

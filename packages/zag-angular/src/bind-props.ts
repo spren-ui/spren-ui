@@ -11,11 +11,9 @@ import {
   inject,
   signal,
 } from '@angular/core';
-import { type Dict } from '@zag-js/core/dist/types';
 
-import { type SplitArgs } from './types';
+import { type Dict, type SplitArgs } from './types';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const isFalsy = (value: any) => value === undefined || value === null;
 
 const eventRegex = /^on[A-Z]/;

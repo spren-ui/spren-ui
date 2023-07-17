@@ -1,7 +1,6 @@
-import { type Dict } from '@zag-js/core/dist/types';
 import { type PropTypes, createNormalizer } from '@zag-js/types';
 
-import { type SplitArgs } from './types';
+import { type Dict, type SplitArgs } from './types';
 
 const propMap: Dict<string> = {
   onDoubleClick: 'onDblClick',
