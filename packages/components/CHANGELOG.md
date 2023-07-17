@@ -1,5 +1,14 @@
 # @spren-ui/components
 
+## 0.0.7
+
+### Patch Changes
+
+- [`d8618ff`](https://github.com/spren-ui/spren-ui/commit/d8618ff07ffd1f28b72d7c216fe7d14665bfa8de) Thanks [@SaulMoro](https://github.com/SaulMoro)! - Update to zagjs latests versions
+
+- Updated dependencies [[`d8618ff`](https://github.com/spren-ui/spren-ui/commit/d8618ff07ffd1f28b72d7c216fe7d14665bfa8de)]:
+  - @spren-ui/zag-angular@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes
