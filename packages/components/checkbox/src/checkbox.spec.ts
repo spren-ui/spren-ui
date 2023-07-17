@@ -42,7 +42,7 @@ describe('Checkbox', () => {
     const { detectChanges } = await render(UnderTestComponent, { componentInputs: { checked: 'indeterminate' } });
 
     detectChanges(); // Renderer2 doesn't trigger change detection
-    expect(screen.getByTestId('control')).toHaveAttribute('data-indeterminate');
+    expect(screen.getByTestId('control')).toHaveAttribute('data-state', 'indeterminate');
   });
 
   it('should allow controlled usage', async () => {

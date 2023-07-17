@@ -1,17 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "automerge": false,
   "dependencyDashboard": false,
   "extends": ["config:base", ":semanticCommitTypeAll(chore)", "schedule:earlyMondays"],
   "labels": ["dependencies"],
   "rebaseWhen": "conflicted",
   "timezone": "UTC",
-  "lockFileMaintenance": {
-    "enabled": true,
-    "schedule": "before 6:00am on the first day of the month"
-  },
-  "prConcurrentLimit": 30,
-  "prHourlyLimit": 0,
   "packageRules": [
     {
       "description": "Automatically merge minor and patch-level updates",

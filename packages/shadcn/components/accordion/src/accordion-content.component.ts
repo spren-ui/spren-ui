@@ -40,8 +40,8 @@ export class AccordionContent {
   @Input() class? = '';
   @HostBinding('class') get elementClass() {
     return cn(
-      this.forceMount ? '[&:not([hidden])]:block' : 'block', // for animations
-      'overflow-hidden text-sm transition-all data-[expanded]:animate-accordion-down [&:not([data-expanded])]:animate-accordion-up',
+      this.forceMount ? 'data-[state=open]:block' : 'block', // for animations
+      'overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
       this.class,
     );
   }
