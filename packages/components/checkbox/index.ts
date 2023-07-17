@@ -1,4 +1,4 @@
-export type { CheckedState } from '@zag-js/checkbox';
+export type { PublicApi as CheckboxPublicApi, CheckedState } from '@zag-js/checkbox';
 export { Checkbox, CheckboxContext, type CheckboxProps } from './src/checkbox';
 export { CheckboxControl } from './src/checkbox-control';
 export { CheckboxInput } from './src/checkbox-input';

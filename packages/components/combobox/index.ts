@@ -1,4 +1,4 @@
-export type { OptionData, Placement, PositioningOptions } from '@zag-js/combobox';
+export type { PublicApi as ComboboxPublicApi, OptionData, Placement, PositioningOptions } from '@zag-js/combobox';
 export { Combobox, ComboboxContext, type ComboboxProps } from './src/combobox';
 export { ComboboxClearTrigger } from './src/combobox-clear-trigger';
 export { ComboboxContent } from './src/combobox-content';

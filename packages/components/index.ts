@@ -13,4 +13,5 @@ export {
   Portal,
   mergeProps,
 } from '@spren-ui/zag-angular';
+export type { ContextFrom, EventFrom, SplitArgs, StateFrom } from '@spren-ui/zag-angular';
 export { createAnatomy } from '@zag-js/anatomy';
