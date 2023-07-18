@@ -37,6 +37,8 @@
           "packages/components/checkbox/**/*.html",
           "packages/components/combobox/**/*.ts",
           "packages/components/combobox/**/*.html",
+          "packages/components/presence/**/*.ts",
+          "packages/components/presence/**/*.html",
           "packages/components/switch/**/*.ts",
           "packages/components/switch/**/*.html",
           "packages/components/tabs/**/*.ts",
