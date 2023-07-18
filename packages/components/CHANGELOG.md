@@ -1,5 +1,14 @@
 # @spren-ui/components
 
+## 0.0.8
+
+### Patch Changes
+
+- [`1adc940`](https://github.com/spren-ui/spren-ui/commit/1adc940e14542d36a8113c562f051244115ed976) Thanks [@SaulMoro](https://github.com/SaulMoro)! - Add Presence component
+  Export PublicApi types
+- Updated dependencies []:
+  - @spren-ui/zag-angular@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
