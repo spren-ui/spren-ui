@@ -1,4 +1,4 @@
-export type { PublicApi as SwitchPublicApi } from '@zag-js/switch';
+export type { PublicApi as SwitchApi } from '@zag-js/switch';
 export { Switch, SwitchContext, type SwitchProps } from './src/switch';
 export { SwitchControl } from './src/switch-control';
 export { SwitchInput } from './src/switch-input';

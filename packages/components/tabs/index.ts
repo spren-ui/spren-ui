@@ -1,4 +1,4 @@
-export type { PublicApi as TabsPublicApi } from '@zag-js/tabs';
+export type { PublicApi as TabsApi } from '@zag-js/tabs';
 export { Tabs, TabsContext, type TabsProps } from './src/tabs';
 export { TabContentContext, TabsContent, type TabsContentProps } from './src/tabs-content';
 export { TabsIndicator } from './src/tabs-indicator';

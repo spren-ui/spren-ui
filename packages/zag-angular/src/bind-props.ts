@@ -2,15 +2,16 @@ import {
   type AfterViewInit,
   Directive,
   ElementRef,
-  InjectionToken,
   Injector,
   Input,
   Renderer2,
   type Signal,
+  computed,
   effect,
   inject,
   signal,
 } from '@angular/core';
+import { mergeProps } from '@zag-js/core';
 
 import { type Dict, type SplitArgs } from './types';
 
@@ -18,28 +19,37 @@ const isFalsy = (value: any) => value === undefined || value === null;
 
 const eventRegex = /^on[A-Z]/;
 
-export interface CustomBindProps {
-  bindProps?: Signal<SplitArgs>;
-  bindPropsElement?: ElementRef<any>;
-}
-
-export const CUSTOM_BIND_PROPS_TOKEN = new InjectionToken<CustomBindProps>('CUSTOM_BIND_PROPS_TOKEN');
-
 @Directive()
 export abstract class HostBindProps implements AfterViewInit {
   readonly #injector = inject(Injector);
-  readonly #customBindProps = inject(CUSTOM_BIND_PROPS_TOKEN, { optional: true, self: true });
   readonly #renderer2 = inject(Renderer2);
   readonly #nativeElement = inject(ElementRef).nativeElement;
 
   abstract readonly props: Signal<SplitArgs | Dict>;
 
+  readonly #mergeProps = signal<Partial<SplitArgs> | null>(null);
+  readonly #propsContainer = signal<Element | null>(null);
+
   ngAfterViewInit(): void {
-    this.#bindProps(this.#customBindProps?.bindProps ?? this.props);
+    const props = computed(() => {
+      const props = this.props();
+      const propsTomerge = this.#mergeProps();
+      return propsTomerge ? mergeProps(props, propsTomerge) : props;
+    });
+    this.#bindProps(props);
+  }
+
+  mergeProps(props: Partial<SplitArgs>) {
+    this.#mergeProps.set(props);
+  }
+
+  propsContainer(container: ElementRef<Element> | Element) {
+    const nativeElement = container instanceof ElementRef ? container.nativeElement : container;
+    this.#propsContainer.set(nativeElement);
   }
 
   #bindProps(props: Signal<SplitArgs | Dict>) {
-    const nativeElement = this.#customBindProps?.bindPropsElement?.nativeElement ?? this.#nativeElement;
+    const nativeElement = this.#propsContainer() || this.#nativeElement;
 
     effect(
       () => {

@@ -1,2 +1,2 @@
-export type { PublicApi as PresencePublicApi } from '@zag-js/presence';
-export { Presence, type PresenceProps } from './src/presence';
+export type { PublicApi as PresenceApi } from '@zag-js/presence';
+export { Presence, PresenceContext, type PresenceContextProps, type PresenceProps } from './src/presence';

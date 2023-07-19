@@ -19,3 +19,16 @@ export default async function render(url: string, document: string) {
   });
   return html;
 }
+
+let lastTime = 0;
+global['requestAnimationFrame'] = function (callback) {
+  const now = new Date().getTime();
+  const nextTime = Math.max(lastTime + 16, now);
+  return setTimeout(function () {
+    callback((lastTime = nextTime));
+  }, nextTime - now) as unknown as number;
+};
+
+global['cancelAnimationFrame'] = function (id) {
+  clearTimeout(id);
+};

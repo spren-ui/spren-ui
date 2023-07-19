@@ -15,10 +15,12 @@ import {
 } from '@angular/core';
 
 import { propsChanges } from '@spren-ui/components/utils';
+import { OnMount } from '@spren-ui/zag-angular';
 
 import { type UsePresenceProps, usePresence } from './use-presence';
 
-export type PresenceProps = UsePresenceProps & {
+export type PresenceContextProps = UsePresenceProps;
+export type PresenceProps = PresenceContextProps & {
   /**
    * Whether to enable lazy mounting. Defaults to `false`.
    */
@@ -30,9 +32,29 @@ export type PresenceProps = UsePresenceProps & {
 };
 
 @Directive({
+  standalone: true,
+  hostDirectives: [OnMount],
+})
+export class PresenceContext implements PresenceContextProps, OnChanges {
+  @Input() present!: PresenceProps['present'];
+  @Input() onExitComplete: PresenceProps['onExitComplete'];
+
+  readonly inputs = signal<PresenceProps>({ present: this.present });
+  readonly presence = usePresence(this.inputs);
+
+  ngOnChanges(changes: SimpleChanges): void {
+    propsChanges(this.inputs, changes);
+  }
+}
+
+@Directive({
   selector: '[sprenPresence]',
   standalone: true,
   hostDirectives: [
+    {
+      directive: PresenceContext,
+      inputs: ['present: sprenPresence', 'onExitComplete: sprenPresenceOnExitComplete'],
+    },
     {
       directive: NgIf,
       inputs: ['ngIfElse: sprenPresenceElse'],
@@ -40,23 +62,23 @@ export type PresenceProps = UsePresenceProps & {
   ],
   exportAs: 'presence',
 })
-export class Presence implements PresenceProps, OnInit, OnChanges {
+export class Presence implements PresenceProps, OnInit {
   readonly #ngIfDirective = inject(NgIf);
   readonly #injector = inject(Injector);
   readonly #renderer2 = inject(Renderer2);
   readonly #elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
-  #currentNode: HTMLElement | null = null;
+  #container: HTMLElement | null = null;
   #wasEverPresent = false;
 
   @Input({ alias: 'sprenPresence', required: true }) set present(value: PresenceProps['present']) {
-    this.#currentNode && this.#renderer2.setAttribute(this.#currentNode, 'data-state', value ? 'open' : 'closed');
+    if (this.#container) {
+      this.#renderer2.setAttribute(this.#container, 'data-state', value ? 'open' : 'closed');
+    }
   }
-  @Input({ alias: 'sprenPresenceOnExitComplete' }) onExitComplete: PresenceProps['onExitComplete'];
   @Input({ alias: 'sprenPresenceLazyMount' }) lazyMount: PresenceProps['lazyMount'];
   @Input({ alias: 'sprenPresenceUnmountOnExit' }) unmountOnExit: PresenceProps['unmountOnExit'];
 
-  readonly inputs = signal<PresenceProps>({ present: this.present });
-  readonly presence = usePresence(this.inputs);
+  readonly presence = inject(PresenceContext).presence;
 
   ngOnInit(): void {
     effect(
@@ -73,20 +95,16 @@ export class Presence implements PresenceProps, OnInit, OnChanges {
         this.#ngIfDirective.ngIf = shouldRender;
 
         const node = this.#elementRef.nativeElement.previousElementSibling as HTMLElement | null;
+
         if (shouldRender && node) {
           untracked(() => {
-            this.#currentNode = node;
+            this.#container = node;
             this.presence().setNode(node);
             this.#renderer2.setProperty(node, 'hidden', !isPresent);
-            this.#renderer2.setAttribute(node, 'data-state', this.inputs().present ? 'open' : 'closed');
           });
         }
       },
       { injector: this.#injector },
     );
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    propsChanges(this.inputs, changes);
   }
 }

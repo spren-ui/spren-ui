@@ -1,7 +1,6 @@
 import { NgIf } from '@angular/common';
 import {
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
@@ -31,20 +30,35 @@ import { cn } from '@spren-ui/shadcn/utils/cn';
 })
 export class AccordionContent {
   readonly #nativeElement = inject(ElementRef).nativeElement;
-  readonly #cdr = inject(ChangeDetectorRef);
-  readonly #accordionItem = inject(AccordionContentHeadless).accordionItem;
-  readonly isPresent = computed(() => this.forceMount || this.#accordionItem().isOpen);
+  readonly #accordionContent = inject(AccordionContentHeadless);
 
+  /**
+   * Whether to force mounting. Defaults to `false`.
+   */
   @Input({ transform: booleanAttribute }) forceMount = false;
+  /**
+   * Whether to unmount on exit. Defaults to `false`.
+   */
+  @Input({ transform: booleanAttribute }) unmountOnExit = false;
 
   @Input() class? = '';
   @HostBinding('class') get elementClass() {
     return cn(
-      this.forceMount ? 'data-[state=open]:block' : 'block', // for animations
+      '[&:not([hidden])]:block', // for animations
       'overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
       this.class,
     );
   }
+
+  #wasEverPresent = false;
+  readonly isPresent = computed(() => {
+    const isPresent = this.#accordionContent.isPresent();
+    if (isPresent) {
+      this.#wasEverPresent = true;
+    }
+    const forceMount = !isPresent && this.forceMount && !this.#wasEverPresent;
+    return isPresent || forceMount || (!this.unmountOnExit && this.#wasEverPresent);
+  });
 
   #height = 0;
   #width = 0;
@@ -55,9 +69,9 @@ export class AccordionContent {
     return this.#width ? `${this.#width.toFixed(1)}px` : undefined;
   }
 
-  readonly #isBrowser = !!this.#nativeElement?.['getBoundingClientRect'];
+  readonly #isBrowser = () => !!this.#nativeElement?.['getBoundingClientRect'];
   readonly #calculateDimensionsEffect =
-    this.#isBrowser &&
+    this.#isBrowser() &&
     effect((onCleanup) => {
       if (this.isPresent()) {
         const rAF = requestAnimationFrame(() => this.#calculateDimensions());
@@ -87,7 +101,5 @@ export class AccordionContent {
     node.style.transitionDuration = this.#originalStyles['transitionDuration'];
     node.style.animationName = this.#originalStyles['animationName'];
     node.hidden = this.#originalStyles['hidden'];
-
-    this.#cdr.markForCheck();
   }
 }
