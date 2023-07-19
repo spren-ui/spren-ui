@@ -8,7 +8,7 @@ import { AccordionItemContext } from './accordion-item';
 @Directive({
   selector: '[sprenAccordionContent]',
   standalone: true,
-  hostDirectives: [PresenceContext],
+  hostDirectives: [{ directive: PresenceContext, inputs: ['onExitComplete'] }],
   exportAs: 'accordionContent',
 })
 export class AccordionContent extends HostBindProps {
