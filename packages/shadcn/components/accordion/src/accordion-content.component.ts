@@ -56,7 +56,7 @@ export class AccordionContent {
     if (isPresent) {
       this.#wasEverPresent = true;
     }
-    const forceMount = !isPresent && this.forceMount && !this.#wasEverPresent;
+    const forceMount = this.forceMount && !this.#wasEverPresent;
     return isPresent || forceMount || (!this.unmountOnExit && this.#wasEverPresent);
   });
 

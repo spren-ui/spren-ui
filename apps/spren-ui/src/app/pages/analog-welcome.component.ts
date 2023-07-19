@@ -128,7 +128,7 @@ import { AccordionComponents } from '@spren-ui/shadcn/components/accordion';
       </section>
 
       <section>
-        <div sprenAccordion value="2" collapsible>
+        <div sprenAccordion value="1">
           <div sprenAccordionItem value="1">
             <h3>
               <button sprenAccordionTrigger>Section 1 title</button>
@@ -147,24 +147,39 @@ import { AccordionComponents } from '@spren-ui/shadcn/components/accordion';
             </h3>
             <div sprenAccordionContent>Panel 3</div>
           </div>
+          <div sprenAccordionItem value="4">
+            <h3>
+              <button sprenAccordionTrigger>Section 4 title</button>
+            </h3>
+            <div sprenAccordionContent>Panel 4</div>
+          </div>
         </div>
       </section>
 
       <section class="mt-4">
-        <ui-accordion collapsible>
+        <ui-accordion value="0">
           <ui-accordion-item value="0">
+            <ui-accordion-trigger data-testid="button">Section 1 title</ui-accordion-trigger>
+            <ui-accordion-content data-testid="panel">Panel 1</ui-accordion-content>
+          </ui-accordion-item>
+        </ui-accordion>
+      </section>
+
+      <section class="mt-4">
+        <ui-accordion value="1" collapsible>
+          <ui-accordion-item value="1">
             <ui-accordion-trigger>First section</ui-accordion-trigger>
             <ui-accordion-content>lazy render</ui-accordion-content>
           </ui-accordion-item>
-          <ui-accordion-item value="1">
+          <ui-accordion-item value="2">
             <ui-accordion-trigger>Second section</ui-accordion-trigger>
             <ui-accordion-content unmountOnExit>lazy render & unmountOnExit</ui-accordion-content>
           </ui-accordion-item>
-          <ui-accordion-item value="2">
+          <ui-accordion-item value="3">
             <ui-accordion-trigger>Third section</ui-accordion-trigger>
             <ui-accordion-content forceMount>force render</ui-accordion-content>
           </ui-accordion-item>
-          <ui-accordion-item value="3">
+          <ui-accordion-item value="4">
             <ui-accordion-trigger>Last section</ui-accordion-trigger>
             <ui-accordion-content forceMount unmountOnExit>force render & unmountOnExit</ui-accordion-content>
           </ui-accordion-item>

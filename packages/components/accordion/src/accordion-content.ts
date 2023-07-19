@@ -17,11 +17,12 @@ export class AccordionContent extends HostBindProps {
   readonly accordionItem = this.#accordionItem.accordionItem;
   readonly #isOpen = computed(() => this.accordionItem().isOpen);
 
-  readonly #presenceContext = (() => {
+  readonly presence = (() => {
     const presenceContext = inject(PresenceContext);
     const nativeElement = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
+    const presence = presenceContext.presence;
 
-    presenceContext.presence().setNode(nativeElement);
+    presence().setNode(nativeElement);
     effect(
       () => {
         const isOpen = this.#isOpen();
@@ -30,14 +31,21 @@ export class AccordionContent extends HostBindProps {
       { allowSignalWrites: true },
     );
 
-    return presenceContext;
+    return presence;
   })();
+  readonly isPresent = computed(() => this.presence().isPresent);
 
-  readonly isPresent = computed(() => this.#presenceContext.presence().isPresent);
-
+  readonly #contentProps = computed(() => this.accordion().getContentProps(this.accordionItem()));
   readonly props = computed(() => {
-    const props = this.accordion().getContentProps(this.accordionItem());
+    const contentProps = this.#contentProps();
     const isPresent = this.isPresent();
-    return mergeProps(props, { props: { hidden: !isPresent } } as Partial<SplitArgs>);
+
+    // If hidden content, wait for Presence to update the hidden prop
+    return contentProps.props['hidden']
+      ? ({
+          ...contentProps,
+          props: mergeProps(contentProps.props, { hidden: !isPresent }),
+        } as SplitArgs)
+      : contentProps;
   });
 }

@@ -26,6 +26,7 @@ describe('Accordion', () => {
 
     detectChanges(); // Renderer2 doesn't trigger change detection
     expect(screen.getByTestId('button')).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('region')).toBeInTheDocument();
   });
 
   it('should toggles the accordion on click', async () => {

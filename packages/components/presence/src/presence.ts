@@ -15,7 +15,6 @@ import {
 } from '@angular/core';
 
 import { propsChanges } from '@spren-ui/components/utils';
-import { OnMount } from '@spren-ui/zag-angular';
 
 import { type UsePresenceProps, usePresence } from './use-presence';
 
@@ -33,7 +32,6 @@ export type PresenceProps = PresenceContextProps & {
 
 @Directive({
   standalone: true,
-  hostDirectives: [OnMount],
 })
 export class PresenceContext implements PresenceContextProps, OnChanges {
   @Input() present!: PresenceProps['present'];
