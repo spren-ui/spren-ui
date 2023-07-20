@@ -73,7 +73,7 @@ export class AccordionContent {
   readonly #calculateDimensionsEffect =
     this.#isBrowser() &&
     effect((onCleanup) => {
-      if (this.isPresent()) {
+      if (this.#accordionContent.isPresent()) {
         const rAF = requestAnimationFrame(() => this.#calculateDimensions());
         onCleanup(() => cancelAnimationFrame(rAF));
       }
@@ -86,12 +86,10 @@ export class AccordionContent {
     this.#originalStyles = this.#originalStyles || {
       transitionDuration: node.style.transitionDuration,
       animationName: node.style.animationName,
-      hidden: node.hidden,
     };
     // block any animations/transitions so the element renders at its full dimensions
     node.style.transitionDuration = '0s';
     node.style.animationName = 'none';
-    node.hidden = false;
 
     // get width and height from full dimensions
     const rect = node.getBoundingClientRect();
@@ -100,6 +98,5 @@ export class AccordionContent {
 
     node.style.transitionDuration = this.#originalStyles['transitionDuration'];
     node.style.animationName = this.#originalStyles['animationName'];
-    node.hidden = this.#originalStyles['hidden'];
   }
 }
