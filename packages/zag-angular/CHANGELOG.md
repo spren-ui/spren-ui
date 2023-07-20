@@ -1,5 +1,11 @@
 # @spren-ui/zag-angular
 
+## 0.0.9
+
+### Patch Changes
+
+- [`0b34f05`](https://github.com/spren-ui/spren-ui/commit/0b34f0559423facd70c11f41a15f19529e2c97a6) Thanks [@SaulMoro](https://github.com/SaulMoro)! - Change Presence behavior
+
 ## 0.0.8
 
 ## 0.0.7
