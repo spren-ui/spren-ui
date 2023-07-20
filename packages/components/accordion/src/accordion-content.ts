@@ -1,4 +1,4 @@
-import { Directive, ElementRef, computed, effect, inject } from '@angular/core';
+import { Directive, computed, effect, inject } from '@angular/core';
 
 import { PresenceContext } from '@spren-ui/components/presence';
 import { HostBindProps, type SplitArgs, mergeProps } from '@spren-ui/zag-angular';
@@ -19,10 +19,8 @@ export class AccordionContent extends HostBindProps {
 
   readonly presence = (() => {
     const presenceContext = inject(PresenceContext);
-    const nativeElement = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
     const presence = presenceContext.presence;
 
-    presence().setNode(nativeElement);
     effect(
       () => {
         const isOpen = this.#isOpen();

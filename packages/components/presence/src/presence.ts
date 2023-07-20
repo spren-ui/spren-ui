@@ -38,7 +38,15 @@ export class PresenceContext implements PresenceContextProps, OnChanges {
   @Input() onExitComplete: PresenceProps['onExitComplete'];
 
   readonly inputs = signal<PresenceProps>({ present: this.present });
-  readonly presence = usePresence(this.inputs);
+  readonly presence = (() => {
+    const presence = usePresence(this.inputs);
+
+    const nativeElement = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
+    const isRealNode = !!nativeElement.getBoundingClientRect;
+    isRealNode && presence().setNode(nativeElement);
+
+    return presence;
+  })();
 
   ngOnChanges(changes: SimpleChanges): void {
     propsChanges(this.inputs, changes);
@@ -76,7 +84,8 @@ export class Presence implements PresenceProps, OnInit {
   @Input({ alias: 'sprenPresenceLazyMount' }) lazyMount: PresenceProps['lazyMount'];
   @Input({ alias: 'sprenPresenceUnmountOnExit' }) unmountOnExit: PresenceProps['unmountOnExit'];
 
-  readonly presence = inject(PresenceContext).presence;
+  readonly presenceContext = inject(PresenceContext);
+  readonly presence = this.presenceContext.presence;
 
   ngOnInit(): void {
     effect(
@@ -99,6 +108,7 @@ export class Presence implements PresenceProps, OnInit {
             this.#container = node;
             this.presence().setNode(node);
             this.#renderer2.setProperty(node, 'hidden', !isPresent);
+            this.#renderer2.setAttribute(node, 'data-state', this.presenceContext.present ? 'open' : 'closed');
           });
         }
       },
