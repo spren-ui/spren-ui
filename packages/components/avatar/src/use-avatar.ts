@@ -1,7 +1,7 @@
-import { DOCUMENT } from '@angular/common';
-import { type Signal, computed, inject } from '@angular/core';
+import { type Signal, computed } from '@angular/core';
 import * as avatar from '@zag-js/avatar';
 
+import { useSprenUIEnvironment } from '@spren-ui/components/environment';
 import { type Optional } from '@spren-ui/components/utils';
 import { normalizeProps, useMachine } from '@spren-ui/zag-angular';
 
@@ -12,8 +12,7 @@ export type UseAvatarProps = Optional<avatar.Context, 'id'>;
 export type UseAvatarReturn = ReturnType<typeof useAvatar>;
 
 export const useAvatar = (props: Signal<UseAvatarProps>) => {
-  const document = inject(DOCUMENT);
-  const getRootNode = () => document;
+  const getRootNode = useSprenUIEnvironment();
 
   const initialContext = {
     id: `av${++nextUniqueId}`,

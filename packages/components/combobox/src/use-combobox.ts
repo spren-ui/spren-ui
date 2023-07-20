@@ -1,7 +1,7 @@
-import { DOCUMENT } from '@angular/common';
-import { type Signal, computed, inject } from '@angular/core';
+import { type Signal, computed } from '@angular/core';
 import * as combobox from '@zag-js/combobox';
 
+import { useSprenUIEnvironment } from '@spren-ui/components/environment';
 import { type Optional } from '@spren-ui/components/utils';
 import { normalizeProps, useMachine } from '@spren-ui/zag-angular';
 
@@ -12,8 +12,7 @@ export type UseComboboxProps = Optional<combobox.Context, 'id'>;
 export type UseComboboxReturn = ReturnType<typeof useCombobox>;
 
 export const useCombobox = (props: Signal<UseComboboxProps>) => {
-  const document = inject(DOCUMENT);
-  const getRootNode = () => document;
+  const getRootNode = useSprenUIEnvironment();
 
   const initialContext = {
     id: `cb${++nextUniqueId}`,
