@@ -37,7 +37,7 @@ export class AccordionContent extends HostBindProps {
 
   readonly #contentProps = computed(() => this.accordion().getContentProps(this.accordionItem()));
   readonly props = computed(() => {
-    const contentProps = this.#contentProps();
+    const contentProps = this.#contentProps() as SplitArgs;
     const isPresent = this.isPresent();
 
     // If hidden content, wait for Presence to update the hidden prop
