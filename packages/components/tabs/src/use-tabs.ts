@@ -1,7 +1,7 @@
-import { DOCUMENT } from '@angular/common';
-import { type Signal, computed, inject } from '@angular/core';
+import { type Signal, computed } from '@angular/core';
 import * as tabs from '@zag-js/tabs';
 
+import { useSprenUIEnvironment } from '@spren-ui/components/environment';
 import { type Optional } from '@spren-ui/components/utils';
 import { normalizeProps, useMachine } from '@spren-ui/zag-angular';
 
@@ -12,8 +12,7 @@ export type UseTabsProps = Optional<tabs.Context, 'id'>;
 export type UseTabsReturn = ReturnType<typeof useTabs>;
 
 export const useTabs = (props: Signal<UseTabsProps>) => {
-  const document = inject(DOCUMENT);
-  const getRootNode = () => document;
+  const getRootNode = useSprenUIEnvironment();
 
   const initialContext = {
     id: `t${++nextUniqueId}`,
