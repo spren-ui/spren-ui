@@ -1,19 +1,20 @@
-import { Component, computed, signal } from '@angular/core';
+import { JsonPipe } from '@angular/common';
+import { Component, computed } from '@angular/core';
 import { render, screen } from '@testing-library/angular';
 
-import { type SprenUIEnvironment, provideSprenUIEnvironment, useSprenUIEnvironment } from './environment';
+import { provideSprenUIEnvironment, useSprenUIEnvironment } from './environment';
 
 @Component({
   selector: 'spren-environment-test',
   standalone: true,
+  imports: [JsonPipe],
   template: `
     <pre aria-label="environment values">{{ stringify }}</pre>
   `,
 })
 class UnderTestComponent {
-  getRootNode = useSprenUIEnvironment();
-  readonly rootNode = signal<SprenUIEnvironment | undefined>(this.getRootNode());
-  readonly stringify = computed(() => JSON.stringify(this.rootNode(), null, 2));
+  readonly getRootNode = useSprenUIEnvironment();
+  readonly stringify = computed(() => JSON.stringify(this.getRootNode(), null, 2));
 }
 
 describe('Environment', () => {

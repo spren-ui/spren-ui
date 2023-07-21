@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { InjectionToken, Injector, computed, inject } from '@angular/core';
+import { InjectionToken, Injector, inject } from '@angular/core';
 
 export type SprenUIEnvironment = ShadowRoot | Document | Node;
 
@@ -21,5 +21,6 @@ export function provideSprenUIEnvironment(value: SprenUIEnvironment) {
 }
 
 export function useSprenUIEnvironment({ injector = inject(Injector) } = {}) {
-  return computed(() => injector.get(SPRENUI_ENVIRONMENT_REF));
+  const rootNode = injector.get(SPRENUI_ENVIRONMENT_REF);
+  return () => rootNode;
 }
