@@ -1,5 +1,14 @@
 # @spren-ui/components
 
+## 0.0.10
+
+### Patch Changes
+
+- [#13](https://github.com/spren-ui/spren-ui/pull/13) [`1dd507c`](https://github.com/spren-ui/spren-ui/commit/1dd507cb624a9ed1dc1409f69bca63aa59b49024) Thanks [@SaulMoro](https://github.com/SaulMoro)! - Add Environment: Configure all Spren UI components for a custom environment like iframe, Shadow DOM or Electron
+
+- Updated dependencies [[`1dd507c`](https://github.com/spren-ui/spren-ui/commit/1dd507cb624a9ed1dc1409f69bca63aa59b49024)]:
+  - @spren-ui/zag-angular@0.0.10
+
 ## 0.0.9
 
 ### Patch Changes
