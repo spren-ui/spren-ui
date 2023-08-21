@@ -35,8 +35,8 @@
     "pub:release": "pnpm publish"
   },
   "peerDependencies": {
-    "@angular/common": "~16.1.0",
-    "@angular/core": "~16.1.0"
+    "@angular/common": "~16.1.0 || ~16.2.0",
+    "@angular/core": "~16.1.0 || ~16.2.0"
   },
   "dependencies": {
     "@zag-js/core": "~0.12.0",
