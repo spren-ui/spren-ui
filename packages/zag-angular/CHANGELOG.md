@@ -1,5 +1,11 @@
 # @spren-ui/zag-angular
 
+## 0.0.11
+
+### Patch Changes
+
+- [#24](https://github.com/spren-ui/spren-ui/pull/24) [`c12db20`](https://github.com/spren-ui/spren-ui/commit/c12db20e77aabfab7583576f6c5d557edafc7e24) Thanks [@SaulMoro](https://github.com/SaulMoro)! - support angular 16.2
+
 ## 0.0.10
 
 ### Patch Changes
