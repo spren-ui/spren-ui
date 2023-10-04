@@ -73,5 +73,7 @@
 body,
 .docs-story > div {
   @apply bg-background font-sans text-foreground antialiased;
-  font-feature-settings: 'rlig' 1, 'calt' 1;
+  font-feature-settings:
+    'rlig' 1,
+    'calt' 1;
 }
