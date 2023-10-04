@@ -3,9 +3,7 @@
   "projectOwner": "spren-ui",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": [
-    "packages/components/README.md"
-  ],
+  "files": ["packages/components/README.md"],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
@@ -18,14 +16,7 @@
       "name": "Saul Moro",
       "avatar_url": "https://avatars.githubusercontent.com/u/4116819?v=4",
       "profile": "https://github.com/SaulMoro",
-      "contributions": [
-        "code",
-        "doc",
-        "ideas",
-        "test",
-        "tool",
-        "design"
-      ]
+      "contributions": ["code", "doc", "ideas", "test", "tool", "design"]
     }
   ]
 }

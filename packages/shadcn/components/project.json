@@ -11,7 +11,8 @@
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
         "project": "packages/shadcn/components/ng-package.json",
-        "tailwindConfig": "packages/shadcn/components/tailwind.config.js"
+        "tailwindConfig": "packages/shadcn/components/tailwind.config.js",
+        "updateBuildableProjectDepsInPackageJson": true
       },
       "configurations": {
         "production": {

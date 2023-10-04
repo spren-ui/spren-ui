@@ -10,9 +10,9 @@
       "executor": "@nx/vite:build",
       "outputs": [
         "{options.outputPath}",
-        "dist/apps/spren-ui/.nitro",
-        "dist/apps/spren-ui/ssr",
-        "dist/apps/spren-ui/analog"
+        "{workspaceRoot}/dist/apps/spren-ui/.nitro",
+        "{workspaceRoot}/dist/apps/spren-ui/ssr",
+        "{workspaceRoot}/dist/apps/spren-ui/analog"
       ],
       "options": {
         "main": "apps/spren-ui/src/main.ts",

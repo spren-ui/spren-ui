@@ -37,8 +37,8 @@
     "pub:release": "pnpm publish"
   },
   "peerDependencies": {
-    "@angular/common": "~16.1.0",
-    "@angular/core": "~16.1.0"
+    "@angular/common": "^16.1.0",
+    "@angular/core": "^16.1.0"
   },
   "dependencies": {
     "@spren-ui/zag-angular": "workspace:*",
