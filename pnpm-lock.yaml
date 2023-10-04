@@ -91,10 +91,10 @@ importers:
         specifier: ~16.2.4
         version: 16.2.4
       '@angular/compiler-cli':
-        specifier: 16.2.7
+        specifier: ~16.2.7
         version: 16.2.7(@angular/compiler@16.2.7)(typescript@5.1.6)
       '@angular/language-service':
-        specifier: 16.2.7
+        specifier: ~16.2.7
         version: 16.2.7
       '@changesets/changelog-github':
         specifier: ^0.4.8
@@ -139,19 +139,19 @@ importers:
         specifier: 16.9.1
         version: 16.9.1(@swc/core@1.3.91)
       '@schematics/angular':
-        specifier: 16.2.4
+        specifier: ~16.2.4
         version: 16.2.4
       '@storybook/addon-a11y':
-        specifier: 7.4.6
+        specifier: ^7.4.6
         version: 7.4.6(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-essentials':
-        specifier: 7.4.6
+        specifier: ^7.4.6
         version: 7.4.6(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-styling':
         specifier: ^1.3.7
         version: 1.3.7(less@4.2.0)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.6)(webpack@5.88.2)
       '@storybook/angular':
-        specifier: 7.4.6
+        specifier: ^7.4.6
         version: 7.4.6(@angular-devkit/architect@0.1602.4)(@angular-devkit/build-angular@16.2.4)(@angular-devkit/core@16.2.4)(@angular/cli@16.2.4)(@angular/common@16.2.7)(@angular/compiler-cli@16.2.7)(@angular/compiler@16.2.7)(@angular/core@16.2.7)(@angular/forms@16.2.7)(@angular/platform-browser-dynamic@16.2.7)(@angular/platform-browser@16.2.7)(@babel/core@7.23.0)(@swc/core@1.3.91)(esbuild@0.18.20)(react-dom@18.2.0)(react@18.2.0)(rxjs@7.8.1)(typescript@5.1.6)(zone.js@0.13.3)
       '@storybook/blocks':
         specifier: ^7.4.6
@@ -160,7 +160,7 @@ importers:
         specifier: ^7.4.6
         version: 7.4.6
       '@storybook/core-server':
-        specifier: 7.4.6
+        specifier: ^7.4.6
         version: 7.4.6
       '@testing-library/angular':
         specifier: ^14.3.0
@@ -2138,7 +2138,7 @@ packages:
     dependencies:
       '@babel/core': 7.22.9
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/template': 7.22.5
+      '@babel/template': 7.22.15
     dev: true
 
   /@babel/plugin-transform-computed-properties@7.22.5(@babel/core@7.23.0):
@@ -2149,7 +2149,7 @@ packages:
     dependencies:
       '@babel/core': 7.23.0
       '@babel/helper-plugin-utils': 7.22.5
-      '@babel/template': 7.22.5
+      '@babel/template': 7.22.15
     dev: true
 
   /@babel/plugin-transform-destructuring@7.23.0(@babel/core@7.22.9):
@@ -6247,6 +6247,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -13479,7 +13480,7 @@ packages:
       minimatch: 3.0.5
       node-abort-controller: 3.1.1
       schema-utils: 3.3.0
-      semver: 7.5.3
+      semver: 7.5.4
       tapable: 2.2.1
       typescript: 5.1.6
       webpack: 5.88.2(@swc/core@1.3.91)(esbuild@0.18.20)
@@ -14968,7 +14969,7 @@ packages:
     resolution: {integrity: sha512-pzqtp31nLv/XFOzXGuvhCb8qhjmTVo5vjVk19XE4CRlSWz0KoeJ3bw9XsA7nOp9YBf4qHjwBxkDzKcME/J29Yg==}
     engines: {node: '>=8'}
     dependencies:
-      '@babel/core': 7.22.9
+      '@babel/core': 7.23.0
       '@babel/parser': 7.23.0
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.0
@@ -15771,7 +15772,7 @@ packages:
       acorn: 8.10.0
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
-      semver: 7.5.3
+      semver: 7.5.4
     dev: true
 
   /jsonc-parser@3.2.0:
@@ -17011,6 +17012,10 @@ packages:
     hasBin: true
     dev: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+    dev: true
+
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
@@ -17366,7 +17371,7 @@ packages:
     dependencies:
       hosted-git-info: 7.0.1
       proc-log: 3.0.0
-      semver: 7.5.3
+      semver: 7.5.4
       validate-npm-package-name: 5.0.0
     dev: true
 
@@ -18413,7 +18418,7 @@ packages:
       cosmiconfig: 7.1.0
       klona: 2.0.6
       postcss: 8.4.31
-      semver: 7.5.3
+      semver: 7.5.4
       webpack: 5.88.2(@swc/core@1.3.91)(esbuild@0.18.20)
     dev: true
 
@@ -21219,7 +21224,7 @@ packages:
       chalk: 4.1.2
       enhanced-resolve: 5.15.0
       micromatch: 4.0.5
-      semver: 7.5.3
+      semver: 7.5.4
       typescript: 5.1.6
       webpack: 5.88.2(@swc/core@1.3.91)(esbuild@0.18.20)
     dev: true
