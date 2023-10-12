@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@analogjs/content':
-        specifier: 0.2.11
-        version: 0.2.11(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1)
+        specifier: 0.2.12
+        version: 0.2.12(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1)
       '@analogjs/router':
-        specifier: 0.2.11
-        version: 0.2.11(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1)
+        specifier: 0.2.12
+        version: 0.2.12(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1)
       '@angular/common':
         specifier: ~16.2.7
         version: 16.2.7(@angular/core@16.2.7)(rxjs@7.8.1)
@@ -436,8 +436,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.19
     dev: true
 
-  /@analogjs/content@0.2.11(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1):
-    resolution: {integrity: sha512-CCMaRJTYVQb7eE1E6TeT1hNs0L1sVoc5zFkUrLzOEKu/MssAHFmpnYNoSuwcAjvnY4ZWfF6+2gW97VicOCpf6w==}
+  /@analogjs/content@0.2.12(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1):
+    resolution: {integrity: sha512-mh/TDWcwWo2e9RmVAUD5fuAzIXmqJO9gyCdbts1y0R7e92eD1ihe+nQtGFabz2d2osHPcVo1V/m3VuC62vUITg==}
     peerDependencies:
       '@angular/common': ^15.0.0 || ^16.0.0
       '@angular/core': ^15.0.0 || ^16.0.0
@@ -491,8 +491,8 @@ packages:
       - xml2js
     dev: true
 
-  /@analogjs/router@0.2.11(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1):
-    resolution: {integrity: sha512-TQXoWUpg1gzlBSwXkyTPkmZy0lBY506Y/uis/GYCncSqg3L++xhVI/+nimK3xLSxL1rWSyTeF22mMN2eNFrDTA==}
+  /@analogjs/router@0.2.12(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1):
+    resolution: {integrity: sha512-t6PwUGxWi3swgBeWCwxzCPT8Op0NIOIufTkJX6OtuuVVY8mBRYkCStbV9rLFuzcOnu0pnTPy/KNp2039NM13Eg==}
     peerDependencies:
       '@angular/core': ^15.0.0 || ^16.0.0
       '@angular/router': ^15.0.0 || ^16.0.0
@@ -501,7 +501,7 @@ packages:
       '@angular/router': 16.2.7(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(rxjs@7.8.1)
       tslib: 2.6.2
     optionalDependencies:
-      '@analogjs/content': 0.2.11(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1)
+      '@analogjs/content': 0.2.12(@angular/common@16.2.7)(@angular/core@16.2.7)(@angular/platform-browser@16.2.7)(@angular/router@16.2.7)(front-matter@4.0.2)(marked-gfm-heading-id@3.1.0)(marked-highlight@2.0.6)(marked@5.1.2)(mermaid@10.5.0)(prismjs@1.29.0)(rxjs@7.8.1)
     transitivePeerDependencies:
       - '@angular/common'
       - '@angular/platform-browser'

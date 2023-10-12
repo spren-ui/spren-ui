@@ -50,8 +50,8 @@
   ],
   "packageManager": "pnpm@8.6.5",
   "dependencies": {
-    "@analogjs/content": "0.2.11",
-    "@analogjs/router": "0.2.11",
+    "@analogjs/content": "0.2.12",
+    "@analogjs/router": "0.2.12",
     "@angular/common": "~16.2.7",
     "@angular/compiler": "~16.2.7",
     "@angular/core": "~16.2.7",
