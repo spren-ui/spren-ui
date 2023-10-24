@@ -67,7 +67,7 @@
     "rxjs": "~7.8.1",
     "tailwind-merge": "~1.14.0",
     "tslib": "~2.6.2",
-    "zone.js": "~0.13.3"
+    "zone.js": "~0.14.0"
   },
   "devDependencies": {
     "@analogjs/platform": "~0.2.11",
